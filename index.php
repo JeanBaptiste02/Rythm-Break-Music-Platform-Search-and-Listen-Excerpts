@@ -36,7 +36,10 @@
             <h2>Bienvenue</h2>
             <article>
                 <h3>Musiques</h3>
-                <p style="color:white">Les musiques ne sont pas encore disponible mais elles le seront bientôt!</p>  
+                <fieldset>
+                    <legend style="color:cyan">Rythm Break</legend>
+                    <p style="color:white">Les musiques ne sont pas encore disponible mais elles le seront bientôt!</p>  
+                </fieldset>
                 
             </article>
 
