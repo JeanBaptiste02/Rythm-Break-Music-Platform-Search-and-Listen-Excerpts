@@ -24,9 +24,12 @@
         </form>       
         
         <nav>
-		<ul>
-           
-		</ul>
+		<ul class="menu">
+            <li><a href="#exo1"> Tendances </a></li>
+            <li><a href="#exo2"> Album </a></li>
+            <li><a href="#exo3"> Bollywood </a></li>
+            
+        </ul>
 		</nav>
 
         

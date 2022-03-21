@@ -146,3 +146,25 @@ footer{
     padding:40px;
     border-radius: 5px;
 }
+
+.menu li{
+    display:inline;
+    margin: 1px;
+    color:#fff;
+}
+
+nav ul li a{
+    color:aliceblue;
+    text-align: center;
+   font-family: 'Luminari, fantasy';
+    font-size: 20px;
+   margin: 20px;
+   text-shadow: 0 0 5px rgb(160, 153, 153), 0 0 15px rgb(182, 172, 172);
+   color: white;
+    
+}
+
+a:hover{
+   color: cyan;
+       transition : 0.9s;
+}
