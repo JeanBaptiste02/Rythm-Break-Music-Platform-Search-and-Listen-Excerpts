@@ -47,13 +47,7 @@
 
             <article>
                 <h3> Image du jour du service APOD </h3>
-                <p> </p>  
-                <!--
-                <figure>                
-                    <img class='monimage' src=https://apod.nasa.gov/apod/image/2203/EquinoxSunset_Christen_1852.jpg alt="image du jour par apod nasa" width='500' height='500'/>
-                    <figcaption class="center">A Picturesque Equinox Sunset : Copyright © Roland Christen</figcaption>
-                </figure>-->
-
+                <p> </p>
                 <?php 
                     $json = file_get_contents('img.json');
                     $json = json_decode($json);
@@ -70,7 +64,7 @@
                         //echo "<li>".$key." : ".$value."</li> \n";
                     }
                     echo "<figure> \n";
-                    echo "<img class='monimage' src='$url' alt='image du jour par apod nasa' width='500' height='500'/> \n";
+                    echo "<img class='monimage' src='$url' alt='image du jour par apod nasa' width='500' height='500' /> \n";
                     echo "<figcaption class='center'>".$title." : Copyright © ".$copy."</figcaption>";
                     echo "</figure> \n";
     ?>
