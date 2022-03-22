@@ -17,17 +17,20 @@
     <body>
 
     <header>
-        <!--
-        <a href="index.php"><img src="./images/logo.png" height="40" width="40" alt="logo de mon site web"/></a>
-        -->
+        
+        <a id="mainLogo" href="index.php"><img src="./images/logo.png" height="40" width="40" alt="logo de mon site web"/></a>
+        
         <h1>Rythm Break</h1>
+        <!--
         <form action="https://gaana.com/" method="get">
                     <input type="text" name="q" placeholder="Cherchez une musique" />    
                     <a href="index.php"><img id="searchlogo" src="./images/loupe.png" height="20" width="20" alt="rechercher"/></a>
-        </form>       
+        </form>     
+        -->  
         
         <nav>
 		<ul class="menu">
+            <li><a href="recherche.php"> Rechercher </a></li>
             <li><a href="tendance.php"> Tendances </a></li>
             <li><a href="album.php"> Album </a></li>
             <li><a href="mainsongs.php"> Bollywood </a></li>
