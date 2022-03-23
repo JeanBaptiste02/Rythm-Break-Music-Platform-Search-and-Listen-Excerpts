@@ -14,10 +14,10 @@
                 <h3>Musiques</h3>
                 <fieldset>
                     <legend style="color:cyan">Rythm Break</legend>
-                    <label for="mychoices">choisir le nom de l'artiste</label>
+                    <label for="mychoices">taper le nom de l'artiste</label>
                     <input type="text" name="nom" placeholder="Choisir un nom" />
 
-                    <label for="mychoices">choisir un mois</label>
+                    <label for="mychoices">choisir le genre </label>
                     <select name="type">
                         <option value="singer"> Artiste </option>
                         <option value="album"> Album </option>

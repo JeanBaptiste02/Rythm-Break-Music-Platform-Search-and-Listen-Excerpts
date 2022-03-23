@@ -17,28 +17,6 @@
                 </fieldset>
                 
             </article>
-
-            <article>
-                <h3> Image du jour du service APOD </h3>
-                <p> </p>
-                <?php 
-                    echo getImageNasa();
-                ?>
-
-            </article>
-
-            <article>
-                <h3> Votre localisation approximative </h3>
-                <fieldset>
-                    <legend id="legloc">Nous avons trouvé votre localisation approximativement</legend>
-                        
-                        <?php    
-                            echo getLocalisation();                                  
-                        ?>
-                 </fieldset>
-            </article>
-
-
         </section>
         
     </main>

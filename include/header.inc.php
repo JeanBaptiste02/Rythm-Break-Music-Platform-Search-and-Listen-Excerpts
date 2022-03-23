@@ -34,6 +34,7 @@
             <li><a href="tendance.php"> Tendances </a></li>
             <li><a href="album.php"> Album </a></li>
             <li><a href="mainsongs.php"> Bollywood </a></li>
+            <li><a href="annexe.php"> Annexe </a></li>
         </ul>
 		</nav>
 
