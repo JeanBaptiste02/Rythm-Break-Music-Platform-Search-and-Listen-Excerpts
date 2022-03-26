@@ -1,8 +1,8 @@
 body{
-    background-color: rgb(38, 61, 61) ;
+    background-color: #191919 ;
     background-size: cover;
     background-attachment:fixed;
-    transition: 6s;
+    transition: 3s;
     /*animation: color 10s infinite linear;*/
 }
 
@@ -22,7 +22,7 @@ title{
 }
 
 header{
-    height: ç0px;
+    height: Ã§0px;
     width: 190%;
     padding: 9 10px;
     display: flex;
@@ -51,7 +51,7 @@ h1{
 }
 
 h2{
-    color:rgb(12, 158, 126);
+    color:cyan;
     text-align: center;
     border-top-width: 3px;
     border-bottom-width: 3px;
@@ -67,11 +67,11 @@ h2{
     margin-top: 150px;
     font-family: 'Century Gothic';
     text-transform: capitalize ;
-    border-color: rgb(12, 158, 126);   
+    border-color: chartreuse;   
 }
 
 h3{
-    color:rgb(12, 158, 126);
+    color:cyan;
     text-align: center;
     text-transform: capitalize;
     font-family: 'Century Gothic';
@@ -167,13 +167,35 @@ p{
 }
 
 footer{
-    background-color:#302e2e;
+    background-color: black;
     text-align: center;
     display: flex;
     flex-direction: column;
-    padding:40px;
-    border-radius: 5px;
+    padding:10px;
+    border-radius: 9px;
 }
+
+footer table {
+    width: 100%;
+    table-layout:fixed;
+}
+
+.foot-titre {
+    color:royalblue;
+    font-family:"Georgia";
+    padding-bottom: 20px;
+}
+
+.foot-lines {
+    font-family:"Garamond";
+    color: white;
+}
+
+footer table tbody tr td a{
+    font-family:"Garamond";
+    color: white;
+}
+
 
 .menu li{
     display:inline;
@@ -181,22 +203,45 @@ footer{
     color:#fff;
 }
 
+header nav{
+    position: fixed;
+    top: 6px;
+    /* pour aligner les liens vers la droite
+    right:0;
+    */
+    left:320px;
+    justify-content: space-between;
+}
+
 nav ul li a{
-    color:aliceblue;
     text-align: center;
-   font-family: 'Luminari, fantasy';
     font-size: 20px;
-   margin: 20px;
-   text-shadow: 0 0 5px rgb(160, 153, 153), 0 0 15px rgb(182, 172, 172);
-   color: white;
+    margin: 9px;
+    text-decoration: none;
+    text-shadow: 0 0 3px rgb(190, 153, 153), 0 0 1px rgb(182, 172, 172);
+    color: white;
     
 }
 
-a:hover{
-   color: cyan;
-       transition : 0.9s;
+nav ul li a:hover{
+    color:crimson;
+    transition : 0.4s;
 }
+
 
 label{
     color:white;
+}
+
+.global{
+    text-align: center;
+    font-family: 'cambria maths';
+    font-size: 18px;
+    text-indent: 0px;
+    padding: 0px 500px;
+}
+
+.ourimgs{
+    border-radius: 100%;
+    text-align: center;
 }

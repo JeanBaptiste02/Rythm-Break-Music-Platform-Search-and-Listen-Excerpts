@@ -14,6 +14,7 @@
                 <fieldset>
                     <legend style="color:cyan">Rythm Break</legend>
                     <p style="color:white">Les musiques ne sont pas encore disponible mais elles le seront bientôt!</p>  
+                    <p style="color:white">Les informations sur toutes vos musiques favorites sont en route ....</p>  
                 </fieldset>
                 
             </article>
