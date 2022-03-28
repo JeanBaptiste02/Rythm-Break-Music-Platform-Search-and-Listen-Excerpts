@@ -74,19 +74,42 @@ input[type="text"] {
 }
 
 input[type="text"]:hover {
-    width: 160px;
+    width: 165px;
     height:25px;
-    border-radius: 30px;
+    border-radius: 40px;
     color: rgb(250, 250, 244);
     background-color: rgb(46, 43, 43);
     border: 2px solid rgb(209, 188, 0); 
+    padding-left: 2px;
+    padding-right: 2px;
+    transition: 0.5s;
+}
+
+
+input[type="submit"] {
+    margin-left:30px;
+    width: 90px;
+    height:25px;
+    border-radius: 40px;
+    color: black;
+    background-color: lightgray;
+    margin-top:20px;
+}
+
+input[type="submit"]:hover {
+    margin-left:30px;
+    width: 95px;
+    height:25px;
+    border-radius: 30px;
+    color: chartreuse;
+    background-color: rgb(46, 43, 43);
+    border: 2px solid chartreuse; 
     padding-top:2px;
     padding-bottom:2px;
     padding-left: 2px;
     padding-right: 2px;
     transition: 0.5s;
 }
-
 select{
     width: 90px;
     height:20px;
@@ -232,3 +255,4 @@ label{
     border-radius: 100%;
     text-align: center;
 }
+

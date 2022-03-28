@@ -43,4 +43,19 @@
         $finaloc.=   "<p style='color:white'>Vous vous trouvez aux alentours de : $ville $regionName $regionCode $region $pays</p>";      
         return $finaloc;         
     }
+
+    /**
+     * @author Damodarane&Elumalai
+     */
+
+    function getArtist(string $eltrecherche): array{
+        //on recupere le contenu
+        $json2 = file_get_contents("https://ws.audioscrobbler.com/2.0/?method=artist.search&artist=".$eltrecherche."&api_key=ee832f2cbf4899e1409329429c40a34f&format=json");
+        //on accede a des valeurs decode
+        $json2 = json_decode($json2);
+        $json3 = $json2->results;
+        $json4 = $json3->artistmatches;
+        $json5 = $json4->artist;
+        return $json5;
+    }
 ?>

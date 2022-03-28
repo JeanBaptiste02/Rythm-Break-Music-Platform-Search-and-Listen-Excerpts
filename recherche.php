@@ -8,7 +8,7 @@
 
     <main>
         <section>
-            <h2>Cherchez vos chansons favories</h2>
+            <h2>Cherchez vos chansons favorites</h2>
             <article>
 
                 <h3>Musiques</h3>
@@ -24,11 +24,28 @@
                             <option value="song"> Musique </option>
                             <option value="others"> Autres </option>
                         </select>
+                        <input type="submit" value="rechercher" />  	
                     </fieldset>
                 </form>
                 
             </article>
 
+
+            <?php
+                if(isset($_GET["nom"])){
+                    $elt = $_GET["nom"];
+                    $nomart = getArtist($elt);
+                    echo "<section><article>";
+                    echo "<h3 style='color:cyan'>$elt</h3>";
+                    echo "<h4 style='color:red'>Liste des Artistes</h4>";
+                    echo "<ul>";
+                    for ($i=0; $i<sizeof($nomart); $i++) {
+                        echo "<li style='color:white'>".$nomart[$i]->name."</li>";
+                    }
+                    echo "</ul>";
+                    echo "</section></article>";
+                }
+            ?>
         </section>        
     </main>
 
