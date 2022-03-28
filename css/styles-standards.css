@@ -255,4 +255,7 @@ label{
     border-radius: 100%;
     text-align: center;
 }
-
+#is{
+    background-color: rgb(36, 36, 36);
+    text-align: center;
+}

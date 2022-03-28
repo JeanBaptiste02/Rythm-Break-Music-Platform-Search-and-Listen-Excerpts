@@ -29,13 +29,13 @@
                 </form>
                 
             </article>
-
-
-            <?php
+        </section> 
+        
+        <?php
                 if(isset($_GET["nom"])){
                     $elt = $_GET["nom"];
                     $nomart = getArtist($elt);
-                    echo "<section><article>";
+                    echo '<section><article id="is">';
                     echo "<h3 style='color:cyan'>$elt</h3>";
                     echo "<h4 style='color:red'>Liste des Artistes</h4>";
                     echo "<ul>";
@@ -44,9 +44,12 @@
                     }
                     echo "</ul>";
                     echo "</section></article>";
+                } else if(empty($_GET["nom"])){
+                    echo "veuillez entrer quelque chose";
                 }
+
             ?>
-        </section>        
+
     </main>
 
 <?php
