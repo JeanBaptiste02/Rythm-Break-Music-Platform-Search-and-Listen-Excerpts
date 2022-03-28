@@ -33,8 +33,7 @@
         
         <?php
                 if(isset($_GET["nom"])){
-                    $elt = $_GET["nom"];
-                    $nomart = getArtist($elt);
+                    $nomart = getArtist($_GET["nom"]);
                     echo '<section><article id="is">';
                     echo "<h3 style='color:cyan'>$elt</h3>";
                     echo "<h4 style='color:red'>Liste des Artistes</h4>";

@@ -53,9 +53,11 @@
         $json2 = file_get_contents("https://ws.audioscrobbler.com/2.0/?method=artist.search&artist=".$eltrecherche."&api_key=ee832f2cbf4899e1409329429c40a34f&format=json");
         //on accede a des valeurs decode
         $json2 = json_decode($json2);
+        //on cherche une valeure precise
         $json3 = $json2->results;
         $json4 = $json3->artistmatches;
         $json5 = $json4->artist;
+        //on retourne la valeure
         return $json5;
     }
 ?>
