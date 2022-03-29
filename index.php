@@ -7,18 +7,25 @@
 ?> 
 
     <main>
-        <section>
-            <h2>Bienvenue</h2>
-            <article>
-                <h3>Musiques</h3>
-                <fieldset>
-                    <legend style="color:cyan">Rythm Break</legend>
-                    <p style="color:white">Les musiques ne sont pas encore disponible mais elles le seront bientôt!</p>  
-                    <p style="color:white">Les informations sur toutes vos musiques favorites sont en route ....</p>  
-                </fieldset>
-                
-            </article>
+        <section id="rechehceBienvenue">
+            <h2> Bienvenue </h2>
+            <h3>Rythm Break - Découvrez vos musiques préférées!</h3>
+            <form action="recherche.php" method="get">
+                <input type="text" name="nom" placeholder="Choisir un nom" />
+
+                <select name="type">
+                    <option value="singer"> Artiste </option>
+                    <option value="album"> Album </option>
+                    <option value="song"> Musique </option>
+                    <option value="others"> Autres </option>
+                </select>
+                <input type="submit" class ="inputSubmitIndex" value="rechercher" />  	
+            </form>
+       
+
         </section>
+
+     
         
     </main>
 

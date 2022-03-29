@@ -68,7 +68,7 @@
 
     function getAlbums(string $eltrecherche): array{
         //on recupere le contenu
-        $json2 = file_get_contents("http://ws.audioscrobbler.com/2.0/?method=album.search&album=".$eltrecherche."&api_key=6797e845697fe4bf1eb908c66133769c&format=json");
+        $json2 = file_get_contents("http://ws.audioscrobbler.com/2.0/?method=album.search&album=".$eltrecherche."&api_key=ee832f2cbf4899e1409329429c40a34f&format=json");
         //on accede a des valeurs decode
         $json2 = json_decode($json2);
         //on cherche une valeure precise
@@ -85,7 +85,7 @@
 
     function getTracks(string $eltrecherche): array{
         //on recupere le contenu
-        $json2 = file_get_contents("http://ws.audioscrobbler.com/2.0/?method=track.search&track=".$eltrecherche."&api_key=6797e845697fe4bf1eb908c66133769c&format=json");
+        $json2 = file_get_contents("http://ws.audioscrobbler.com/2.0/?method=track.search&track=".$eltrecherche."&api_key=ee832f2cbf4899e1409329429c40a34f&format=json");
         //on accede a des valeurs decode
         $json2 = json_decode($json2);
         //on cherche une valeure precise

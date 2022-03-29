@@ -1,5 +1,5 @@
 body{
-    background-color: #191919 ;
+    background-color: #2b2a2a ;
     background-size: cover;
     background-attachment:fixed;
     transition: 3s;
@@ -37,6 +37,10 @@ h1{
     padding-top:20px;
 }
 
+.indexh2{
+    text-align:center;
+    color:cyan;
+}
 h2{
     color:cyan;
     text-align: center;
@@ -52,6 +56,8 @@ h2{
     margin-left: 1%;
     margin-right: 80%;
     margin-top: 150px;
+    padding-left:1%;
+    padding-right:1%;
     font-family: 'Century Gothic';
     text-transform: capitalize ;
     border-color: chartreuse;   
@@ -61,55 +67,64 @@ h3{
     color:cyan;
     text-align: center;
     text-transform: capitalize;
+    font-size:25px;
     font-family: 'Century Gothic';
 }
 
-input[type="text"] {
-    width: 160px;
-    height:25px;
-    border-radius: 40px;
-    color: black;
-    background-color: lightgray;
-    margin-top:20px;
+h4{
+    color:red;
+    text-align: center;
 }
 
-input[type="text"]:hover {
-    width: 165px;
-    height:25px;
-    border-radius: 40px;
-    color: rgb(250, 250, 244);
-    background-color: rgb(46, 43, 43);
-    border: 2px solid rgb(209, 188, 0); 
-    padding-left: 2px;
-    padding-right: 2px;
-    transition: 0.5s;
+#rechehceBienvenue{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem;
+    margin-bottom: 0;
 }
 
 
-input[type="submit"] {
-    margin-left:30px;
+
+input[type="text"]{
+    background-color:lightgray;
+    border-radius: 12px;
+    margin-right: 20px;
+    width: 300px;
+    height: 30px;
+}
+
+input[type="text"]:hover{
+    background-color:lightgray;
+    border: 2px solid black; 
+    border-radius: 12px;
+    margin-right: 20px;
+    width: 300px;
+    height: 30px;
+}
+
+input[type="submit"]{
+    margin-left: 20px;
+    background-color: crimson;
+    border: 2px solid black; 
+    border-radius: 12px;
+    margin-right: 20px;
     width: 90px;
-    height:25px;
-    border-radius: 40px;
-    color: black;
-    background-color: lightgray;
-    margin-top:20px;
+    height: 30px;
 }
 
-input[type="submit"]:hover {
-    margin-left:30px;
-    width: 95px;
-    height:25px;
-    border-radius: 30px;
-    color: chartreuse;
-    background-color: rgb(46, 43, 43);
-    border: 2px solid chartreuse; 
-    padding-top:2px;
-    padding-bottom:2px;
-    padding-left: 2px;
-    padding-right: 2px;
-    transition: 0.5s;
+input[type="submit"]:hover{
+    color: white;
+    background-color: crimson;
+    border: 2px solid black;     
+    transition: 0.2s;
 }
+
+input[type="submit"]:hover{
+    transform: translateY(-2px);
+    transition:0.3s;
+}
+
 select{
     width: 90px;
     height:20px;
@@ -119,18 +134,15 @@ select{
     margin-top:20px;
 }
 
+
 select:hover{
-    width: 95px;
+    width: 90px;
     height:22px;
     border-radius: 30px;
-    color: rgb(250, 250, 244);
-    background-color: rgb(46, 43, 43);
-    border: 2px solid rgb(209, 188, 0); 
-    padding-top:2px;
-    padding-bottom:2px;
-    padding-left: 2px;
-    padding-right: 2px;
-    transition: 0.5s;
+    color: black;
+    background-color: lightgray;
+    border: 1px solid black; 
+    transition: 0.2s;
 }
 
 #legloc{
@@ -257,7 +269,37 @@ label{
     border-radius: 100%;
     text-align: center;
 }
-#is{
-    background-color: rgb(36, 36, 36);
-    text-align: center;
+
+ol li{
+    list-style-type: none;
+}
+
+.is{
+    border-radius:0px;
+    border-bottom: 1px solid rgb(83, 82, 82);
+    padding: 1px;
+    display: flex;
+    font-family: 'cambria maths';
+    justify-content: space-between;
+    width: auto;
+    height:auto;
+    color: white;
+}
+
+.listeItemClass tr{
+    table-layout: fixed;
+}
+
+.centerItems {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;  
+}
+
+
+
+.listeItemClass {
+    width: 100%;
+    padding: 1%;
+    table-layout: fixed;
 }
