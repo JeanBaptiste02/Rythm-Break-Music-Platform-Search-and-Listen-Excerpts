@@ -35,7 +35,7 @@
                 if(isset($_GET["nom"]) && (isset($_GET["type"])) && $_GET["type"] == "singer"){
                     $nomart = getArtist($_GET["nom"]);
                     echo '<section>';
-                    echo "<h4 class='centerItems'>Liste des Artistes</h4>";
+                    echo "<h4>Liste des Artistes</h4>";
                     echo "<ol class='centerItems'>";
                     for ($i=0; $i<sizeof($nomart); $i++) {
                         echo '<article class="is">';
@@ -49,7 +49,7 @@
                 if(isset($_GET["nom"]) && (isset($_GET["type"])) && $_GET["type"] == "album"){
                     $nomalb = getAlbums($_GET["nom"]);
                     echo '<section>';
-                    echo "<h4 class='centerItems'>Liste des Albums</h4>";
+                    echo "<h4>Liste des Albums</h4>";
                     echo "<ol class='centerItems'>";
                     for ($i=0; $i<sizeof($nomalb); $i++) {
                         echo '<article class="is">';
@@ -64,7 +64,7 @@
                 if(isset($_GET["nom"]) && (isset($_GET["type"])) && $_GET["type"] == "song"){
                     $nomtracks = getTracks($_GET["nom"]);
                     echo '<section>';
-                    echo "<h4 class='centerItems'>Liste des Musiques</h4>";
+                    echo "<h4>Liste des Musiques</h4>";
                     echo "<ol class='centerItems'>";
                     for ($i=0; $i<sizeof($nomtracks); $i++) {
                         echo '<article class="is">';
