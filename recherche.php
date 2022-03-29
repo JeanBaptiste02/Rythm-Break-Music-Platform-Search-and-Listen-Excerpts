@@ -32,10 +32,9 @@
         </section> 
         
         <?php
-                if(isset($_GET["nom"])){
+                if(isset($_GET["nom"]) && (isset($_GET["type"])) && $_GET["type"] == "singer"){
                     $nomart = getArtist($_GET["nom"]);
                     echo '<section><article id="is">';
-                    echo "<h3 style='color:cyan'>$elt</h3>";
                     echo "<h4 style='color:red'>Liste des Artistes</h4>";
                     echo "<ul>";
                     for ($i=0; $i<sizeof($nomart); $i++) {
@@ -43,10 +42,29 @@
                     }
                     echo "</ul>";
                     echo "</section></article>";
-                } else if(empty($_GET["nom"])){
-                    echo "veuillez entrer quelque chose";
                 }
-
+                if(isset($_GET["nom"]) && (isset($_GET["type"])) && $_GET["type"] == "album"){
+                    $nomalb = getAlbums($_GET["nom"]);
+                    echo '<section><article id="is">';
+                    echo "<h4 style='color:red'>Liste des Albums</h4>";
+                    echo "<ul>";
+                    for ($i=0; $i<sizeof($nomalb); $i++) {
+                        echo "<li style='color:white'>".$nomalb[$i]->name."</li>";
+                    }
+                    echo "</ul>";
+                    echo "</section></article>";
+                }
+                if(isset($_GET["nom"]) && (isset($_GET["type"])) && $_GET["type"] == "song"){
+                    $nomtracks = getTracks($_GET["nom"]);
+                    echo '<section><article id="is">';
+                    echo "<h4 style='color:red'>Liste des pistes</h4>";
+                    echo "<ul>";
+                    for ($i=0; $i<sizeof($nomtracks); $i++) {
+                        echo "<li style='color:white'>".$nomtracks[$i]->name."</li>";
+                    }
+                    echo "</ul>";
+                    echo "</section></article>";
+                }
             ?>
 
     </main>

@@ -2,6 +2,7 @@
 
     /**
      * @author Damodarane&Elumalai
+     * @return les valeurs souhaitees
      */
     function getImageNasa() : string {
         $s = "";
@@ -57,6 +58,40 @@
         $json3 = $json2->results;
         $json4 = $json3->artistmatches;
         $json5 = $json4->artist;
+        //on retourne les valeurs
+        return $json5;
+    }
+
+    /**
+     * @author Damodarane&Elumalai
+     */
+
+    function getAlbums(string $eltrecherche): array{
+        //on recupere le contenu
+        $json2 = file_get_contents("http://ws.audioscrobbler.com/2.0/?method=album.search&album=".$eltrecherche."&api_key=6797e845697fe4bf1eb908c66133769c&format=json");
+        //on accede a des valeurs decode
+        $json2 = json_decode($json2);
+        //on cherche une valeure precise
+        $json3 = $json2->results;
+        $json4 = $json3->albummatches;
+        $json5 = $json4->album;
+        //on retourne la valeure
+        return $json5;
+    }
+
+     /**
+     * @author Damodarane&Elumalai
+     */
+
+    function getTracks(string $eltrecherche): array{
+        //on recupere le contenu
+        $json2 = file_get_contents("http://ws.audioscrobbler.com/2.0/?method=track.search&track=".$eltrecherche."&api_key=6797e845697fe4bf1eb908c66133769c&format=json");
+        //on accede a des valeurs decode
+        $json2 = json_decode($json2);
+        //on cherche une valeure precise
+        $json3 = $json2->results;
+        $json4 = $json3->trackmatches;
+        $json5 = $json4->track;
         //on retourne la valeure
         return $json5;
     }
