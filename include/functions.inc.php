@@ -1,8 +1,5 @@
 <?php
 
-
-define("LASTFM_API_KEY","63512c1472e0f49899c08d2981a701a2");
-
     /**
      * @author Damodarane&Elumalai
      * @return les valeurs souhaitees
@@ -106,7 +103,6 @@ define("LASTFM_API_KEY","63512c1472e0f49899c08d2981a701a2");
      * @return json2 retourne la valeure souhaitee
      */
     function getTracksDetails(string $songs, string $artiste): array{
-        
         $json2 = file_get_contents("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=ee832f2cbf4899e1409329429c40a34f&artist=".$artiste."&track=".$songs."&format=json");
         $json2 = json_decode($json2, true);
         return $json2["track"];
