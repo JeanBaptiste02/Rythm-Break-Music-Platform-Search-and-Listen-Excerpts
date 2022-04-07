@@ -12,7 +12,7 @@
 
             if ((isset($_GET["songs"]))&&(isset($_GET["artiste"]))){
                 $details = getTracksDetails($_GET["songs"], $_GET["artiste"]);
-                echo "<h2>Détails sur la musique : ".$details["name"]."</h2> \n";
+                echo "<h2>Détails</h2> \n";
                 echo "<ol> \n";
                 echo "<li>Durée : ".$details["duration"]."</li> \n";
                 echo "<li>Nombres d'écoutes : ".$details["playcount"]."</li> \n";
