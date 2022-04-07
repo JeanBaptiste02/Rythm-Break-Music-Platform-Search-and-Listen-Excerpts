@@ -62,20 +62,39 @@
                     echo "</section>";
                 }
                 if(isset($_GET["nom"]) && (isset($_GET["type"])) && $_GET["type"] == "song"){
-                    $nomtracks = getTracks($_GET["nom"]);
+                    $songs = getTracks($_GET["nom"]);
                     echo '<section>';
                     echo "<h4>Liste des Musiques</h4>";
                     echo "<ol class='centerItems'>";
-                    for ($i=0; $i<sizeof($nomtracks); $i++) {
+                    for ($i=0; $i<sizeof($songs); $i++) {
                         echo '<article class="is">';
-                        echo "<li style='color:white';><table class='listeItemClass'><tr><td>".$nomtracks[$i]->name."</td>";
-                        echo "<td> Artiste : ".$nomtracks[$i]->artist."</td>";
-                        echo "<td><button>details</button></td></tr></table></li>";
+                        echo "<li style='color:white';><table class='listeItemClass'><tr><td>".$songs[$i]->name."</td>";
+                        echo "<td> Artiste : ".$songs[$i]->artist."</td>";
+                        echo '<td>  <form action="recherche.php" method="get">
+                                    <input type="hidden" name="songs" value='.$songs[$i]->name.' />
+                                    <input type="hidden" name="artiste" value='.$songs[$i]->artist.' />
+                                    <input type="submit" value="Details" />
+                                    </form>
+                        </td></tr></table></li>';
                         echo "</article>";
                     }
                     echo "</ol>";
                     echo "</section>";
                 }
+
+                if ((isset($_GET["songs"]))&&(isset($_GET["artiste"]))){
+
+                    $details = getTracksDetails($_GET["songs"], $_GET["artiste"]);
+                    echo "<section style='background-color:gray; border-radius:30px; color:white; text-align:center;'><h2>Détails sur la musique : ".$details["name"]."</h2>";
+                    echo "<ol>";
+                    echo "<li>Artiste : ".$details["artist"]["name"]."</li>";
+                    echo "<li>Album : ".$details["album"]["title"]." de ".$details["album"]["artist"]."</li>";
+                    echo "<li>Artiste : ".$details["artist"]["name"]."</li>";
+                    echo "<li>".$details["wiki"]["summary"]."</li>";
+                    echo "</ol>";    
+                    echo "</section>";
+                }
+
             ?>
 
     </main>

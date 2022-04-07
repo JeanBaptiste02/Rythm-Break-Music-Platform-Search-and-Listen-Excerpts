@@ -1,5 +1,8 @@
 <?php
 
+
+define("LASTFM_API_KEY","63512c1472e0f49899c08d2981a701a2");
+
     /**
      * @author Damodarane&Elumalai
      * @return les valeurs souhaitees
@@ -95,4 +98,18 @@
         //on retourne la valeure
         return $json5;
     }
+
+    /**
+     * permet d'avoir des détailes sur la musique choisie
+     * @param songs designe la chanson choisie
+     * @param artiste designe l'artiste correspondant a la musique
+     * @return json2 retourne la valeure souhaitee
+     */
+    function getTracksDetails(string $songs, string $artiste): array{
+        
+        $json2 = file_get_contents("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=ee832f2cbf4899e1409329429c40a34f&artist=".$artiste."&track=".$songs."&format=json");
+        $json2 = json_decode($json2, true);
+        return $json2["track"];
+    }
+
 ?>

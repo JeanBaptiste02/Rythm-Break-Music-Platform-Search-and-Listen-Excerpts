@@ -2,7 +2,6 @@ body{
     background-color: #2b2a2a ;
     background-size: cover;
     background-attachment:fixed;
-    transition: 3s;
 }
 
 title{
@@ -125,6 +124,29 @@ input[type="submit"]:hover{
     transform: translateY(-2px);
     transition:0.3s;
 }
+
+table tr td input[type="submit"]{
+    margin-left: 20px;
+    color:red;
+    background-color: midnightblue;
+    border: 2px solid black; 
+    border-radius: 12px;
+    margin-right: 20px;
+    width: 90px;
+    height: 30px;
+}
+
+table tr td input[type="submit"]:hover{
+    margin-left: 20px;
+    color: white;
+    background-color: orangered;
+    border: 2px solid black; 
+    border-radius: 12px;
+    margin-right: 20px;
+    width: 90px;
+    height: 30px;
+}
+
 
 select{
     width: 90px;
@@ -255,7 +277,7 @@ nav ul li a:hover{
 label{
     color:white;
     padding-left: 20px;
-    padding-right:20px"
+    padding-right:20px;
 }
 
 .global{
