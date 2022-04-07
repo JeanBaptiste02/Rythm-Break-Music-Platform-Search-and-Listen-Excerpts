@@ -313,6 +313,10 @@ ol li{
     table-layout: fixed;
 }
 
+.listeItemClass tr td {
+    padding-right: 40px;
+}
+
 .centerItems {
     padding: 0;
     margin: 0;
