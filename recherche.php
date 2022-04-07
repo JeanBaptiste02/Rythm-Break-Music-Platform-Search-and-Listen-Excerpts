@@ -70,9 +70,9 @@
                         echo '<article class="is">';
                         echo "<li style='color:white';><table class='listeItemClass'><tr><td>".$songs[$i]->name."</td>";
                         echo "<td> Artiste : ".$songs[$i]->artist."</td>";
-                        echo '<td>  <form action="details.php" method="get">
-                                    <input type="hidden" name="songs" value='.$songs[$i]->name.' />
-                                    <input type="hidden" name="artiste" value='.$songs[$i]->artist.' />
+                        echo '<td>  <form action="informations.php" method="get">
+                                    <input type="hidden" name="songs" value='.urlencode($songs[$i]->name).' />
+                                    <input type="hidden" name="artiste" value='.urlencode($songs[$i]->artist).' />
                                     <input type="submit" value="Details" />
                                     </form>
                         </td></tr></table></li>';
@@ -81,8 +81,6 @@
                     echo "</ol>";
                     echo "</section>";
                 }
-
-
             ?>
 
     </main>

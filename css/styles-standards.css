@@ -300,6 +300,7 @@ ol li{
 .is{
     border-radius:0px;
     border-bottom: 1px solid rgb(83, 82, 82);
+    margin-bottom:40px;
     padding: 1px;
     display: flex;
     font-family: 'cambria maths';
@@ -326,3 +327,31 @@ ol li{
     padding: 1%;
     table-layout: fixed;
 }
+
+/**
+pour la page d'informations
+*/
+.details {
+    background-color: none;
+    color: white;
+    text-align:center;
+    font-family:"Comic Sans MS";
+
+    
+}
+
+.details a{
+    color: cyan;
+}
+
+.details a:hover{
+    color: goldenrod;
+    transition:0.4s;
+}
+
+.details img{
+    margin-left:9%;
+    width:auto;
+    height:auto;
+}
+
