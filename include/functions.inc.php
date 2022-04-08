@@ -1,12 +1,16 @@
 <?php
 
+    define('NASA_API_KEY','8voCfhA1Kwo3y4ubOB0p39kFwq8Dlggiq0ofJ5qT');
+    define("LASTFM_API_KEY","ee832f2cbf4899e1409329429c40a34f");
+
     /**
      * @author Damodarane&Elumalai
      * @return les valeurs souhaitees
      */
     function getImageNasa() : string {
+        $apikey = NASA_API_KEY;
         $s = "";
-        $json = file_get_contents("https://api.nasa.gov/planetary/apod?api_key=8voCfhA1Kwo3y4ubOB0p39kFwq8Dlggiq0ofJ5qT");
+        $json = file_get_contents("https://api.nasa.gov/planetary/apod?api_key=$apikey");
         $json = json_decode($json);
         foreach($json as $key => $value) {
             if($key == "url") {
@@ -50,8 +54,9 @@
      */
 
     function getArtist(string $eltrecherche): array{
+        $apikey = LASTFM_API_KEY;
         //on recupere le contenu
-        $json2 = file_get_contents("https://ws.audioscrobbler.com/2.0/?method=artist.search&artist=".$eltrecherche."&api_key=ee832f2cbf4899e1409329429c40a34f&format=json");
+        $json2 = file_get_contents("https://ws.audioscrobbler.com/2.0/?method=artist.search&artist=".$eltrecherche."&api_key=".$apikey."&format=json");
         //on accede a des valeurs decode
         $json2 = json_decode($json2);
         //on cherche une valeure precise
@@ -67,8 +72,9 @@
      */
 
     function getAlbums(string $eltrecherche): array{
+        $apikey = LASTFM_API_KEY;
         //on recupere le contenu
-        $json2 = file_get_contents("http://ws.audioscrobbler.com/2.0/?method=album.search&album=".$eltrecherche."&api_key=ee832f2cbf4899e1409329429c40a34f&format=json");
+        $json2 = file_get_contents("http://ws.audioscrobbler.com/2.0/?method=album.search&album=".$eltrecherche."&api_key=".$apikey."&format=json");
         //on accede a des valeurs decode
         $json2 = json_decode($json2);
         //on cherche une valeure precise
@@ -84,8 +90,9 @@
      */
 
     function getTracks(string $eltrecherche): array{
+        $apikey = LASTFM_API_KEY;
         //on recupere le contenu
-        $json2 = file_get_contents("http://ws.audioscrobbler.com/2.0/?method=track.search&track=".$eltrecherche."&api_key=ee832f2cbf4899e1409329429c40a34f&format=json");
+        $json2 = file_get_contents("http://ws.audioscrobbler.com/2.0/?method=track.search&track=".$eltrecherche."&api_key=".$apikey."&format=json");
         //on accede a des valeurs decode
         $json2 = json_decode($json2);
         //on cherche une valeure precise
@@ -98,14 +105,41 @@
 
     /**
      * permet d'avoir des détailes sur la musique choisie
-     * @param songs designe la chanson choisie
+     * @param song designe la chanson choisie
      * @param artiste designe l'artiste correspondant a la musique
      * @return json2 retourne la valeure souhaitee
      */
-    function getTracksDetails(string $songs, string $artiste): array{
-        $json2 = file_get_contents("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=ee832f2cbf4899e1409329429c40a34f&artist=".$artiste."&track=".$songs."&format=json");
+    function getTracksDetails(string $song, string $artiste): array{
+        $apikey = LASTFM_API_KEY;
+        $json2 = file_get_contents("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=".$apikey."&artist=".$artiste."&track=".$song."&format=json");
         $json2 = json_decode($json2, true);
         return $json2["track"];
     }
+
+     /**
+     * permet d'avoir des détails sur l'album choisie
+     * @param album designe la chanson choisie
+     * @param artiste designe l'artiste correspondant de l'album
+     * @return json2 retourne la valeure souhaitee
+     */
+    function getAlbumsDetails(string $album, string $artiste): array{
+        $apikey = LASTFM_API_KEY;
+        $json2 = file_get_contents("https://ws.audioscrobbler.com/2.0/?method=album.getInfo&api_key=".$apikey."&artist=".$artiste."&album=".$album."&format=json");
+        $json2 = json_decode($json2, true);
+        return $json2["album"];
+    }
+
+     /**
+     * permet d'avoir des détails sur l'artiste choisie
+     * @param name designe le nom de l'artiste
+     * @return json2 retourne la valeure souhaitee
+     */
+    function getArtistsDetails(string $name): array{
+        $apikey = LASTFM_API_KEY;
+        $json2 = file_get_contents("https://ws.audioscrobbler.com/2.0/?method=artist.getInfo&api_key=".$apikey."&artist=".$name."&format=json");
+        $json2 = json_decode($json2, true);
+        return $json2["artist"];
+    }
+
 
 ?>

@@ -40,7 +40,11 @@
                     for ($i=0; $i<sizeof($nomart); $i++) {
                         echo '<article class="is">';
                         echo "<li style='color:white; padding-right: 1%;'><table class='listeItemClass'><tr><td>".$nomart[$i]->name."</td>";
-                        echo "<td><button>details</button></td></tr></table></li>";
+                        echo '<td>  <form action="informations.php" method="get">
+                                    <input type="hidden" name="artist" value='.urlencode($nomart[$i]->name).' />
+                                    <input type="submit" value="Details" />
+                                    </form>
+                        </td></tr></table></li>';
                         echo "</article>";
                     }
                     echo "</ol>";
@@ -55,7 +59,12 @@
                         echo '<article class="is">';
                         echo "<li style='color:white; padding-right: 1%;'><table class='listeItemClass'><tr><td>".$nomalb[$i]->name."</td>";
                         echo "<td> Artiste : ".$nomalb[$i]->artist."</td>";
-                        echo "<td><button>details</button></td></tr></table></li>";
+                        echo '<td>  <form action="informations.php" method="get">
+                                    <input type="hidden" name="album" value='.urlencode($nomalb[$i]->name).' />
+                                    <input type="hidden" name="artiste" value='.urlencode($nomalb[$i]->artist).' />
+                                    <input type="submit" value="Details" />
+                                    </form>
+                        </td></tr></table></li>';
                         echo "</article>";
                     }
                     echo "</ol>";
@@ -72,6 +81,27 @@
                         echo "<td> Artiste : ".$songs[$i]->artist."</td>";
                         echo '<td>  <form action="informations.php" method="get">
                                     <input type="hidden" name="songs" value='.urlencode($songs[$i]->name).' />
+                                    <input type="hidden" name="artiste" value='.urlencode($songs[$i]->artist).' />
+                                    <input type="submit" value="Details" />
+                                    </form>
+                        </td></tr></table></li>';
+                        echo "</article>";
+                    }
+                    echo "</ol>";
+                    echo "</section>";
+                }
+
+                if(isset($_GET["nom"]) && (isset($_GET["type"])) && $_GET["type"] == "songs"){
+                    $songs = getTracks(urlencode($_GET["nom"]));
+                    echo '<section>';
+                    echo "<h4>Liste des Musiques</h4>";
+                    echo "<ol class='centerItems'>";
+                    for ($i=0; $i<sizeof($songs); $i++) {
+                        echo '<article class="is">';
+                        echo "<li style='color:white';><table class='listeItemClass'><tr><td>".$songs[$i]->name."</td>";
+                        echo "<td> Artiste : ".$songs[$i]->artist."</td>";
+                        echo '<td>  <form action="informations.php" method="get">
+                                    <input type="hidden" name="song" value='.urlencode($songs[$i]->name).' />
                                     <input type="hidden" name="artiste" value='.urlencode($songs[$i]->artist).' />
                                     <input type="submit" value="Details" />
                                     </form>
