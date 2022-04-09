@@ -2,7 +2,7 @@
     $titre = "Rythm Break";
     $h1 = "Rythm Break";
     $link = "./css/styles-standards.css";
-    $descrip = "Projet de Développement Web";
+    $descrip = "Projet de DÃ©veloppement Web";
     require "./include/header.inc.php";
 ?> 
 
@@ -33,7 +33,7 @@
         
         <?php
                 if(isset($_GET["nom"]) && (isset($_GET["type"])) && $_GET["type"] == "singer"){
-                    $nomart = getArtist($_GET["nom"]);
+                    $nomart = getArtist(urlencode($_GET["nom"]));
                     echo '<section>';
                     echo "<h4>Liste des Artistes</h4>";
                     echo "<ol class='centerItems'>";
@@ -51,7 +51,7 @@
                     echo "</section>";
                 }
                 if(isset($_GET["nom"]) && (isset($_GET["type"])) && $_GET["type"] == "album"){
-                    $nomalb = getAlbums($_GET["nom"]);
+                    $nomalb = getAlbums(urlencode($_GET["nom"]));
                     echo '<section>';
                     echo "<h4>Liste des Albums</h4>";
                     echo "<ol class='centerItems'>";
@@ -71,7 +71,7 @@
                     echo "</section>";
                 }
                 if(isset($_GET["nom"]) && (isset($_GET["type"])) && $_GET["type"] == "song"){
-                    $songs = getTracks($_GET["nom"]);
+                    $songs = getTracks(urlencode($_GET["nom"]));
                     echo '<section>';
                     echo "<h4>Liste des Musiques</h4>";
                     echo "<ol class='centerItems'>";
