@@ -37,7 +37,11 @@
 				<td class="foot-lines"></td>
 				<td class="foot-lines"></td>
 				<td class="foot-lines"></td>
-                <td class="foot-lines"></td>
+                <td class="foot-lines">
+					<?php
+						echo getNbVistors();
+					?>
+				</td>
 			</tr>
 		</tbody>
 	</table>  

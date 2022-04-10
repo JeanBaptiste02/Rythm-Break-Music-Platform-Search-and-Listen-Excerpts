@@ -4,6 +4,7 @@
     define("LASTFM_API_KEY","ee832f2cbf4899e1409329429c40a34f");
 
     /**
+     * permet d'avoir les image du jour de Apod en fonction du jour
      * @author Damodarane&Elumalai
      * @return les valeurs souhaitees
      */
@@ -32,6 +33,7 @@
 
     
     /**
+     * permet d'avoir la localisation de l'utilisateur avec l'adresse ip
      * @author Damodarane&Elumalai
      */
     function getLocalisation()
@@ -50,7 +52,9 @@
     }
 
     /**
+     * permet d'avoir les artistes
      * @author Damodarane&Elumalai
+     * @param eltrecherche element recherche 
      */
 
     function getArtist(string $eltrecherche): array{
@@ -68,7 +72,9 @@
     }
 
     /**
+     * permet d'avoir les albums
      * @author Damodarane&Elumalai
+     * @param eltrecherche element recherche 
      */
 
     function getAlbums(string $eltrecherche): array{
@@ -86,7 +92,9 @@
     }
 
      /**
+     * permet d'avour les musiques
      * @author Damodarane&Elumalai
+     * @param eltrecherche element recherche 
      */
 
     function getTracks(string $eltrecherche): array{
@@ -105,6 +113,7 @@
 
     /**
      * permet d'avoir des détailes sur la musique choisie
+     * @author Damodarane&Elumalai
      * @param song designe la chanson choisie
      * @param artiste designe l'artiste correspondant a la musique
      * @return json2 retourne la valeure souhaitee
@@ -118,6 +127,7 @@
 
      /**
      * permet d'avoir des détails sur l'album choisie
+     * @author Damodarane&Elumalai
      * @param album designe la chanson choisie
      * @param artiste designe l'artiste correspondant de l'album
      * @return json2 retourne la valeure souhaitee
@@ -131,6 +141,7 @@
 
      /**
      * permet d'avoir des détails sur l'artiste choisie
+     * @author Damodarane&Elumalai
      * @param name designe le nom de l'artiste
      * @return json2 retourne la valeure souhaitee
      */
@@ -141,5 +152,26 @@
         return $json2["artist"];
     }
 
+    /**
+     * permet d'avoir le nombre de visites en fonction du rafraichissement des pages du site
+     * @author Damodarane&Elumalai
+     */
+    function getNbVistors(){
+        $fileName = 'vistors.txt'; 
+       
+        $filerray = file($fileName);
+        $counter = $filerray[0] + 1;
+        $openFile = fopen($fileName,'w+');
+        fwrite($openFile, "$counter \n");
+        fclose($openFile);
+        if($counter == 1)
+        {
+        print 'Nombre de Visiteur : 1';
+        }
+        else
+        {
+        print 'Nombre de Visites : '.$counter .'';
+        }
+    }
 
 ?>
