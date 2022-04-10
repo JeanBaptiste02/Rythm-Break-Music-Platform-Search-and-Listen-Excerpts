@@ -2,16 +2,19 @@
     $titre = "Rythm Break";
     $h1 = "Rythm Break";
     $link = "./css/styles-standards.css";
-    $descrip = "Projet de Développement Web";
+    $descrip = "Projet de DÃ©veloppement Web";
     require "./include/header.inc.php";
 ?> 
 
     <main>
         <section>
-            <article style="margin-top: 60px;">
-                <h1 style="color: white">En Construction</h1>
-            </article>
-        </section>
+            <h2>Les Tendances</h2>
+           
+        </section> 
+        
+        <?php
+            
+        ?>
 
     </main>
 

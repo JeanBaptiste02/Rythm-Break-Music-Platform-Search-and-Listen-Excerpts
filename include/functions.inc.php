@@ -3,6 +3,9 @@
     define('NASA_API_KEY','8voCfhA1Kwo3y4ubOB0p39kFwq8Dlggiq0ofJ5qT');
     define("LASTFM_API_KEY","ee832f2cbf4899e1409329429c40a34f");
 
+    define("API_KEY","226d013400c6319b4053d6673cd936b3");
+
+
     /**
      * permet d'avoir les image du jour de Apod en fonction du jour
      * @author Damodarane&Elumalai
@@ -173,5 +176,15 @@
         print 'Nombre de Visites : '.$counter .'';
         }
     }
+
+/*
+    function getTopTracks(): array{
+       $apikey = LASTFM_API_KEY;
+        $json2 = file_get_contents("http://ws.audioscrobbler.com/2.0/?method=geo.gettoptracks&country=spain&api_key=".$apikey."&format=json");
+        $json2 = json_decode($json2, true);
+        return $json2["track"];
+    */
+
+    
 
 ?>
