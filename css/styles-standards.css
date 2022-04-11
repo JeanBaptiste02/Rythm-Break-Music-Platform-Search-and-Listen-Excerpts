@@ -358,3 +358,36 @@ pour la page d'informations
     width:auto;
     height:auto;
 }
+
+.boxtrysection {
+    margin:6%;
+    max-width: 80%;
+    display: flex;
+    overflow-x: auto;
+}
+
+.boxtrysection h2 {
+    margin-top: 30px;
+    position: absolute;
+}
+
+.boxtry {
+    margin-top: 100px;
+    padding: 3%;
+    margin-top:30%;
+    margin-left:3px;
+    margin-right:20px;
+    margin-width:20px;
+    background-color: darkgray;
+}
+
+.boxtry:hover {
+    margin-top: 100px;
+    padding: 3%;
+    margin-top:30%;
+    margin-left:10px;
+    margin-width:20px;
+    background-color: dimgray;
+    transition:0.6s;
+    cursor:pointer;
+}

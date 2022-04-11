@@ -12,6 +12,26 @@
             
             if ((isset($_GET["songs"]))&&(isset($_GET["artiste"]))){
                 $details = getTracksDetails($_GET["songs"], $_GET["artiste"]);
+
+                $data = readCSV('data.csv');
+                $songName = urldecode($_GET["songs"]);
+                $artistName = urldecode($_GET["artiste"]);
+                if(($data[1][0] == NULL) && ($data[1][1] == NULL)) {
+                    $data[] = array($songName, $artistName);
+                    writeCSV('data.csv', $data);     
+                }
+                $verif = FALSE;
+                for($i=0; $i<sizeof($data); $i++) {
+                    if(($data[$i][0] == $songName) && ($data[$i][1] == $artistName)) {
+                        $verif = TRUE;
+                    } 
+                }
+                if($verif == FALSE) {
+                    $data[] = array($songName, $artistName);
+                    writeCSV('data.csv', $data);
+                }
+                
+
                 echo "<h2>Détails</h2> \n";
                 echo "<ol> \n";
                 $length = $details["duration"] / 1000; 

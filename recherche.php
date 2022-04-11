@@ -32,10 +32,13 @@
         </section> 
         
         <?php
-                if(isset($_GET["nom"]) && (isset($_GET["type"])) && $_GET["type"] == "singer"){
+                if(isset($_GET["nom"]) && (isset($_GET["type"])) && (!empty($_GET["nom"])) && $_GET["type"] == "singer"){
                     $nomart = getArtist(urlencode($_GET["nom"]));
                     echo '<section>';
                     echo "<h4>Liste des Artistes</h4>";
+                    if(empty($nomart)) {
+                        echo "<p style='color:white; padding-right: 1%;'>Aucun résultat trouvé</p> \n";
+                    }
                     echo "<ol class='centerItems'>";
                     for ($i=0; $i<sizeof($nomart); $i++) {
                         echo '<article class="is">';
@@ -49,11 +52,20 @@
                     }
                     echo "</ol>";
                     echo "</section>";
+                }  else if(empty($_GET["nom"]) && (isset($_GET["type"])) && $_GET["type"] == "singer"){
+                    echo "<section>";
+                    echo "<h4>Liste des Artistes</h4>";
+                    echo "<p style='color:white; padding-right: 1%;'>Aucun résultat trouvé</p> \n";
+                    echo "</section>";
                 }
-                if(isset($_GET["nom"]) && (isset($_GET["type"])) && $_GET["type"] == "album"){
+
+                if(isset($_GET["nom"]) && (isset($_GET["type"])) && (!empty($_GET["nom"])) && $_GET["type"] == "album"){
                     $nomalb = getAlbums(urlencode($_GET["nom"]));
                     echo '<section>';
                     echo "<h4>Liste des Albums</h4>";
+                    if(empty($nomalb)) {
+                        echo "<p style='color:white; padding-right: 1%;'>Aucun résultat trouvé</p> \n";
+                    }
                     echo "<ol class='centerItems'>";
                     for ($i=0; $i<sizeof($nomalb); $i++) {
                         echo '<article class="is">';
@@ -69,11 +81,20 @@
                     }
                     echo "</ol>";
                     echo "</section>";
+                } else if(empty($_GET["nom"]) && (isset($_GET["type"])) && $_GET["type"] == "album"){
+                    echo "<section>";
+                    echo "<h4>Liste des Albums</h4>";
+                    echo "<p style='color:white; padding-right: 1%;'>Aucun résultat trouvé</p> \n";
+                    echo "</section>";
                 }
-                if(isset($_GET["nom"]) && (isset($_GET["type"])) && $_GET["type"] == "song"){
+
+                if(isset($_GET["nom"]) && (isset($_GET["type"])) && (!empty($_GET["nom"])) && $_GET["type"] == "song"){
                     $songs = getTracks(urlencode($_GET["nom"]));
                     echo '<section>';
                     echo "<h4>Liste des Musiques</h4>";
+                    if(empty($songs)) {
+                        echo "<p style='color:white; padding-right: 1%;'>Aucun résultat trouvé</p> \n";
+                    }
                     echo "<ol class='centerItems'>";
                     for ($i=0; $i<sizeof($songs); $i++) {
                         echo '<article class="is">';
@@ -89,28 +110,13 @@
                     }
                     echo "</ol>";
                     echo "</section>";
-                }
-
-                if(isset($_GET["nom"]) && (isset($_GET["type"])) && $_GET["type"] == "songs"){
-                    $songs = getTracks(urlencode($_GET["nom"]));
-                    echo '<section>';
+                } else if(empty($_GET["nom"]) && (isset($_GET["type"])) && $_GET["type"] == "song"){
+                    echo "<section>";
                     echo "<h4>Liste des Musiques</h4>";
-                    echo "<ol class='centerItems'>";
-                    for ($i=0; $i<sizeof($songs); $i++) {
-                        echo '<article class="is">';
-                        echo "<li style='color:white';><table class='listeItemClass'><tr><td>".$songs[$i]->name."</td>";
-                        echo "<td> Artiste : ".$songs[$i]->artist."</td>";
-                        echo '<td>  <form action="informations.php" method="get">
-                                    <input type="hidden" name="song" value='.urlencode($songs[$i]->name).' />
-                                    <input type="hidden" name="artiste" value='.urlencode($songs[$i]->artist).' />
-                                    <input type="submit" value="Details" />
-                                    </form>
-                        </td></tr></table></li>';
-                        echo "</article>";
-                    }
-                    echo "</ol>";
+                    echo "<p style='color:white; padding-right: 1%;'>Aucun résultat trouvé</p> \n";
                     echo "</section>";
                 }
+
             ?>
 
     </main>
