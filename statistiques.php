@@ -14,6 +14,7 @@
             for ($i=1; $i<sizeof($list); $i++) {
                 echo '<article class="boxtry">';
                 echo "<p> Artiste : ".$list[$i][1]."</p>";
+                echo "<p style='color:#7FFF00';> Vue : ".$list[$i][2]."</p>";
                 echo '<p>  <form action="informations.php" method="get">
                             <input type="hidden" name="songs" value='.urlencode($list[$i][0]).' />
                             <input type="hidden" name="artiste" value='.urlencode($list[$i][1]).' />

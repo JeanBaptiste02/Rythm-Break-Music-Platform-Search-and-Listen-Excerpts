@@ -16,18 +16,22 @@
                 $data = readCSV('data.csv');
                 $songName = urldecode($_GET["songs"]);
                 $artistName = urldecode($_GET["artiste"]);
-                if(($data[1][0] == NULL) && ($data[1][1] == NULL)) {
-                    $data[] = array($songName, $artistName);
+                if(($data[1][0] == NULL) && ($data[1][1] == NULL) && ($data[1][2] == NULL)) { // on place la 1ere musique dans le CSV
+                    $data[] = array($songName, $artistName, 0);
                     writeCSV('data.csv', $data);     
                 }
                 $verif = FALSE;
-                for($i=0; $i<sizeof($data); $i++) {
-                    if(($data[$i][0] == $songName) && ($data[$i][1] == $artistName)) {
-                        $verif = TRUE;
-                    } 
+                for($i=0; $i<sizeof($data); $i++) { // on parcour du debut tout le csv ligne par ligne
+                    if(($data[$i][0] == $songName) && ($data[$i][1] == $artistName)) { // si la musique exist deja  dans le CSV
+                        $vue = $data[$i][2];
+                        $vue++;
+                        $data[$i] = array($songName, $artistName, $vue); // incrémente juste le nombre de vue de la musique
+                        writeCSV('data.csv', $data);
+                        $existDeja = TRUE;
+                    }
                 }
-                if($verif == FALSE) {
-                    $data[] = array($songName, $artistName);
+                if($existDeja == FALSE) { // la musique n'existe pas dans le CSV donc
+                    $data[] = array($songName, $artistName, 1);
                     writeCSV('data.csv', $data);
                 }
                 

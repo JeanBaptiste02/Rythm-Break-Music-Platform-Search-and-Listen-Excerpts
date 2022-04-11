@@ -372,21 +372,24 @@ pour la page d'informations
 }
 
 .boxtry {
-    margin-top: 100px;
     padding: 3%;
-    margin-top:30%;
+    margin-top:20%;
     margin-left:3px;
     margin-right:20px;
-    margin-width:20px;
-    background-color: darkgray;
+    background-color: #2E2E2E;
+    color: white;
 }
 
+.boxtry input[type="submit"]{
+    margin-left: 20px;
+    background-color:deepskyblue;
+    border: 2px solid lightskyblue; 
+    border-radius: 12px;
+    margin-right: 20px;
+    width: 90px;
+    height: 30px;
+}
 .boxtry:hover {
-    margin-top: 100px;
-    padding: 3%;
-    margin-top:30%;
-    margin-left:10px;
-    margin-width:20px;
     background-color: dimgray;
     transition:0.6s;
     cursor:pointer;
