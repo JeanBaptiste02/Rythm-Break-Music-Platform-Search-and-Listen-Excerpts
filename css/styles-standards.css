@@ -13,7 +13,7 @@ header{
     padding: 9 10px;
     display: flex;
     color: #fff9e8;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: black;
     position: fixed;
     top: 0;
     left: 0;
@@ -128,8 +128,10 @@ input[type="submit"]:hover{
 
 table tr td input[type="submit"]{
     margin-left: 20px;
-    color:red;
-    background-color: midnightblue;
+    color:black;
+    font-size:15px;
+    font-family:"Franklin Gothic Medium";
+    background-color:cyan;
     border: 2px solid black; 
     border-radius: 12px;
     margin-right: 20px;
@@ -139,8 +141,8 @@ table tr td input[type="submit"]{
 
 table tr td input[type="submit"]:hover{
     margin-left: 20px;
-    color: white;
-    background-color: orangered;
+    color:black;
+    background-color:cyan;
     border: 2px solid black; 
     border-radius: 12px;
     margin-right: 20px;
@@ -194,11 +196,11 @@ article{
 }
 
 .monimage{
-    margin-left: 440px;
-    border-radius: 40px;
-    padding-left:20x;
-    margin-right: 100px;
-    margin-left: 240px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width:45%;
+    border-radius:40px;
 }
 
 figcaption{
@@ -264,7 +266,7 @@ nav ul li a{
     font-size: 20px;
     margin: 9px;
     text-decoration: none;
-    text-shadow: 0 0 3px rgb(190, 153, 153), 0 0 1px rgb(182, 172, 172);
+    text-shadow: 0 0 3px gray, 0 0 1px black;
     color: white;
     
 }
@@ -371,26 +373,38 @@ pour la page d'informations
     position: absolute;
 }
 
-.boxtry {
-    padding: 3%;
-    margin-top:20%;
-    margin-left:3px;
-    margin-right:20px;
-    background-color: #2E2E2E;
-    color: white;
+
+
+
+.bowItems{
+    display: flex;
+    overflow-x: scroll;
+    padding-top: 20%;
+    padding-bottom:2%;
+    padding-left:2%;
+    padding-right:2%;
 }
 
-.boxtry input[type="submit"]{
-    margin-left: 20px;
-    background-color:deepskyblue;
-    border: 2px solid lightskyblue; 
-    border-radius: 12px;
-    margin-right: 20px;
-    width: 90px;
-    height: 30px;
+.bowItems article{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    margin: 3%;
+    justify-content: space-between;
+    width: 185px;
+    height:auto;
+    transition: 0.4s;
+    border-radius: 30px;
 }
-.boxtry:hover {
-    background-color: dimgray;
-    transition:0.6s;
-    cursor:pointer;
+.bowItems article:hover{
+    transform: scale(1.1);
+    box-shadow: 1px 1px 18px 5px dimgray;
+}
+
+.randomimage{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+    border-radius:40px;
 }

@@ -9,10 +9,11 @@
     <main>
         <section class="boxtrysection">
             <h2>Liste des musiques consultés</h2>
+            <div class="bowItems">
         <?php
             $list = readCSV('data.csv');
             for ($i=1; $i<sizeof($list); $i++) {
-                echo '<article class="boxtry">';
+                echo '<article>';
                 echo "<p> Artiste : ".$list[$i][1]."</p>";
                 echo "<p style='color:#7FFF00';> Vue : ".$list[$i][2]."</p>";
                 echo '<p>  <form action="informations.php" method="get">
@@ -25,6 +26,7 @@
             }
             
         ?>  
+        </div>
         </section>
 
     </main>

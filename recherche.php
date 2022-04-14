@@ -22,7 +22,6 @@
                             <option value="singer"> Artiste </option>
                             <option value="album"> Album </option>
                             <option value="song"> Musique </option>
-                            <option value="others"> Autres </option>
                         </select>
                         <input type="submit" value="rechercher" />  	
                     </fieldset>
@@ -98,6 +97,7 @@
                     echo "<ol class='centerItems'>";
                     for ($i=0; $i<sizeof($songs); $i++) {
                         echo '<article class="is">';
+                        echo '<li><img src="./images/noimage.jpg" height="30" width="30" alt="song image"/></li>';
                         echo "<li style='color:white';><table class='listeItemClass'><tr><td>".$songs[$i]->name."</td>";
                         echo "<td> Artiste : ".$songs[$i]->artist."</td>";
                         echo '<td>  <form action="informations.php" method="get">
