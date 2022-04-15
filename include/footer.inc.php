@@ -46,7 +46,9 @@
 		</tbody>
 	</table>  
 
-
+	<article class="footeroptions">
+	<a href="?theme=light" id="themehref"><img src="./images/lightmode.png" alt="theme" id="themeicon" /></a>
+	</article>
 </footer>
 </body>
 </html>
