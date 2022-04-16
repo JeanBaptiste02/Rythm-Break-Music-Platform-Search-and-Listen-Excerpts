@@ -14,6 +14,7 @@
             $list = readCSV('data.csv');
             for ($i=1; $i<sizeof($list); $i++) {
                 echo '<article>';
+                echo "<p> Nom : ".$list[$i][0]."</p>";
                 echo "<p> Artiste : ".$list[$i][1]."</p>";
                 echo "<p style='color:#7FFF00';> Vue : ".$list[$i][2]."</p>";
                 echo '<p>  <form action="informations.php" method="get">

@@ -1,5 +1,5 @@
 body{
-    background-color: #2b2a2a ;
+    background-color: #c09c9c ;
     background-size: cover;
     background-attachment:fixed;
 }
@@ -13,7 +13,7 @@ header{
     padding: 9 10px;
     display: flex;
     color: #fff9e8;
-    background-color: black;
+    background-color: darkslategray;
     position: fixed;
     top: 0;
     left: 0;
@@ -42,7 +42,7 @@ h1{
 }
 
 h2{
-    color:cyan;
+    color:black;
     text-align: center;
     border-top-width: 3px;
     border-bottom-width: 3px;
@@ -60,11 +60,11 @@ h2{
     padding-right:1%;
     font-family: 'Century Gothic';
     text-transform: capitalize ;
-    border-color: chartreuse;   
+    border-color: red;   
 }
 
 h3{
-    color:cyan;
+    color:darkblue;
     text-align: center;
     text-transform: capitalize;
     font-size:25px;
@@ -72,7 +72,7 @@ h3{
 }
 
 h4{
-    color:red;
+    color:steelblue;
     text-align: center;
     font-size:20px;
 }
@@ -106,18 +106,20 @@ input[type="text"]:hover{
 
 input[type="submit"]{
     margin-left: 20px;
-    background-color: crimson;
+    background-color: skyblue;
     border: 2px solid black; 
     border-radius: 12px;
     margin-right: 20px;
+    font-size:16px;
     width: 90px;
     height: 30px;
 }
 
 input[type="submit"]:hover{
-    color: white;
-    background-color: crimson;
-    border: 2px solid black;     
+    color: black;
+    background-color: lightskyblue;
+    border: 2px solid black;    
+    font-size:16px;
     transition: 0.2s;
 }
 
@@ -181,8 +183,8 @@ select:hover{
 
 fieldset{
     border-radius: 30px;
-    border-block-start-color: cyan;
-    border-block-end-color: red;  
+    border-block-start-color: gold;
+    border-block-end-color: gold;  
 }
 
 article{
@@ -215,7 +217,7 @@ p{
 }
 
 footer{
-    background-color: black;
+    background-color: darkslategray;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -229,7 +231,7 @@ footer table {
 }
 
 .foot-titre {
-    color:royalblue;
+    color:powderblue;
     font-family:"Georgia";
     padding-bottom: 20px;
 }
@@ -266,13 +268,13 @@ nav ul li a{
     font-size: 20px;
     margin: 9px;
     text-decoration: none;
-    text-shadow: 0 0 3px gray, 0 0 1px black;
+    text-shadow: 0 0 2px dimgray, 0 0 1px black;
     color: white;
     
 }
 
 nav ul li a:hover{
-    color:crimson;
+    color:deepskyblue;
     transition : 0.4s;
 }
 
@@ -415,12 +417,12 @@ pour la page d'informations
     margin-top:25px;
     margin-bottom:-40px;
     border-radius:15px;
-     border-top: 0.1px solid dimgray;
+     border-top: 0.1px solid gold;
     
 }
 
 h5{
-    color: dodgerblue;
+    color: lightblue;
 }
 
 .litnit{
