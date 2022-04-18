@@ -23,13 +23,14 @@
         <h1>Rythm Break</h1>
         
         <nav>
-            <ul class="menu">
+            <ul class="nav_links">
                 <li><a href="recherche.php"> Rechercher </a></li>
                 <li><a href="tendance.php"> Tendances </a></li>
                 <li><a href="mainsongs.php"> Bollywood </a></li>
                 <li><a href="statistiques.php"> Statistiques </a></li>
                 <li><a href="annexe.php"> Annexe </a></li>
-            </ul>
+                <li><a href="?theme=light" id="themehref"><img src="./images/lightmode.png" alt="theme" class="litnit"/></a></li>
+                <li><a href="?lang=eng" id="themehref"><img src="./images/language.png" alt="theme" class="litnit"/></a></li>
+            </ul>  
 		</nav>
-
     </header>

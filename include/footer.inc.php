@@ -47,19 +47,18 @@
 	</table>  
 
 
-
+<!--
 
 	<section class="lastclass">
 		<h5> PLus d'options </h5>
 		<article>
-            <a href="?theme=light" id="themehref"><img src="./images/lightmode.png" alt="theme" id="themeicon" class="litnit" /></a>
-			<a href="?lang=eng" id="themehref"><img src="./images/language.png" alt="theme" id="themeicon" class="litnit" /></a>
-
 			<div>
 				<a href="#"><img src="./images/up.png" alt="theme" id="themeicon" class="upbutton" /></a>
 			</div>
 		</article>
 	</section>
+
+-->
 </footer>
 </body>
 </html>

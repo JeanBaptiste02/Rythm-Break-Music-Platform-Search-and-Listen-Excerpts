@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500');
+
 body{
     background-color: #2b2a2a ;
     background-size: cover;
@@ -20,20 +22,81 @@ header{
 }
 
 
-h1{
-    text-transform: uppercase;
-    text-align: center;
-    font-family: 'Luminari, fantasy';
-    margin: 20px;
-    text-shadow: 0 0 5px rgb(160, 153, 153), 0 0 15px rgb(182, 172, 172);
+
+nav ul li, a{
+    font-family: "Montserrat", sans-serif;
+    font-weight:500;
+    font-size:15px;
     color: white;
-    padding-right: 1%;
-    border-right: 4px solid gray;
+    text-decoration: none;
+}
+
+header{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 8 8px;
+    
+}
+
+.nav_links{
+    list-style: none;
+}
+
+.nav_links li{
+    display: inline-block;
+    padding: 0px 2px;
+}
+
+.nav_links li a{
+    transition: 0.5s;
+}
+
+.nav_links li a:hover{
+    color:crimson;
 }
 
 /**/
 #mainLogo{
-    padding-top:20px;
+    margin-right:20px;
+    padding-top:0.2%;
+    padding-left:0.2%;
+    animation: wiggle 2s linear infinite;
+}
+
+h1{
+    margin-right:auto;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: 'Luminari, fantasy';
+    text-shadow: 0 0 5px rgb(160, 153, 153), 0 0 15px rgb(182, 172, 172);
+    color: white;
+    padding-right: 1%;
+    border-right: 4px solid darkgray;
+}
+
+@keyframes wiggle {
+    0%, 7% {
+      transform: rotateZ(1);
+        }
+    15% {
+      transform: rotateZ(15deg);
+    }
+    20% {
+      transform: rotateZ(25deg);
+    }
+    25% {
+      transform: rotateZ(30deg);
+    }
+    30% {
+      transform: rotateZ(35deg);
+    }
+    35% {
+      transform: rotateZ(40deg);
+    }
+    40%, 100% {
+      transform: rotateZ(0);
+    }
 }
 
 .indexh2{
@@ -42,9 +105,9 @@ h1{
 }
 
 h2{
-    color:cyan;
+    color:chartreuse;
     text-align: center;
-    border-top-width: 3px;
+    /* border-top-width: 3px;
     border-bottom-width: 3px;
     border-left-width: 10px;
     border-right-width: 10px;
@@ -54,13 +117,13 @@ h2{
     border-bottom-style: solid;
     border-radius:40px;
     margin-left: 1%;
-    margin-right: 80%;
-    margin-top: 150px;
-    padding-left:1%;
-    padding-right:1%;
+    margin-right: 80%; */
+    margin-top: 140px;
+    /* padding-left:1%;
+    padding-right:1%; */
     font-family: 'Century Gothic';
     text-transform: capitalize ;
-    border-color: chartreuse;   
+    /* border-color: chartreuse;    */
 }
 
 h3{
@@ -244,13 +307,6 @@ footer table tbody tr td a{
     color: white;
 }
 
-
-.menu li{
-    display:inline;
-    margin: 1px;
-    color:#fff;
-}
-
 header nav{
     position: fixed;
     top: 6px;
@@ -370,7 +426,6 @@ pour la page d'informations
 
 .boxtrysection h2 {
     margin-top: 30px;
-    position: absolute;
 }
 
 .bowItems{
@@ -411,24 +466,32 @@ pour la page d'informations
     padding: 1%;
 }
 
-.lastclass{
-    margin-top:25px;
-    margin-bottom:-40px;
-    border-radius:15px;
-     border-top: 0.1px solid dimgray;
-    
-}
-
 h5{
     color: dodgerblue;
-}
-
-.litnit{
-    width:35px;
-    margin-top:-30%;
 }
 
 .upbutton{
     width:20px;
     margin-left:90%;
 }
+
+.litnit{
+    width: 38px;
+    margin-top: -15px;
+    margin-left:auto;
+    padding-left:auto;
+    padding-top:14%;
+}
+
+.fstdiv{
+    position: relative;
+    left: -55%;
+    margin-top:-8%;
+    margin-left:160%;
+    border-left: 4px solid gray;
+    display:flex
+}
+
+
+
+
