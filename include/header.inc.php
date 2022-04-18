@@ -5,34 +5,11 @@
 
 <?php
     session_start();
-    /*
-        default theme
-    */
-    if(empty($_COOKIE["theme"])){ 
-        setcookie("theme", "styles-standards", time()+3600);
-        $fichiercss = "styles-standards";
-    }
-    if(isset($_POST["theme"])){
-        setcookie("theme", $_POST["theme"], time()+3600);
-        $mainpage = basename($_SERVER["REQUEST_URI"]);
-        if(strpos($mainpage, "php") == false){
-            $mainpage = "index.php";
-        }
-        header("Location: $mainpage");
-        if($_POST["theme"] == "style-alternatif"){
-            $fichiercss = "styles-standards";
-        }
-        else{
-            $fichiercss = "style-alternatif";
-        }
-    }
-    if(isset($_COOKIE["theme"])){
-        if($_COOKIE["theme"] == "style-alternatif"){
-            $fichiercss = "styles-standards";
-        }
-        else{
-            $fichiercss = "style-alternatif";
-        }
+   
+    if(isset($_GET['style'])) {
+        $style = htmlspecialchars($_GET['style']);
+        setcookie('choix', "$style", time()+3600); //le cookie espire dans 1heure = 3600secondes
+        $_COOKIE['choix'] = $style;
     }
 ?>
 <!DOCTYPE html>
@@ -47,17 +24,17 @@
         <meta charset="UTF-8" />
 
         <?php
-            if(isset($_POST["theme"])){
-                echo "<link rel=\"stylesheet\" href=\"./css/" . $_POST["theme"] . ".css\"/>";
-            }
-            elseif(isset($_COOKIE["theme"])) {
-                echo "<link rel=\"stylesheet\" href=\"./css/" . $_COOKIE["theme"] . ".css\"/>";
+            /*
+                manipulations des liens en fonction des styles
+            */
+            $style = $_COOKIE['choix'];
+            if(isset($_COOKIE['choix']) && !empty($_COOKIE['choix'])) {
+                echo "<link rel=\"stylesheet\" href=\"./css/$style.css\"/>"; //le style qu'on choisit
             }
             else {
-                echo "<link rel=\"stylesheet\" href=\"styles-standards.css\"/>";
+                echo "<link rel=\"stylesheet\" href=\"./css/styles-standards.css\"/>"; //par defaut
             }
         ?>
-
 
     </head>
 
@@ -78,10 +55,15 @@
                 <li><a href="annexe.php"> Annexe </a></li>
                 <li>
                 <?php
-                    echo "<form class=\"theme\" method=\"post\">\n";
-                    echo "\t\t\t\t<input type=\"hidden\" name=\"theme\" value=\"$fichiercss\" />\n";
-                    echo "\t\t\t\t<input type=\"submit\" value=\" \" style=\"background-image: url(./images/lightmode.png);\" />\n";
-                    echo "</form>\n";
+                    $pageactive = basename($_SERVER["PHP_SELF"]); //recupere la page active (ou la page en cours d'utilisation)
+                    if(isset($_COOKIE['choix']) && $_COOKIE['choix'] == "style-alternatif") {
+                        echo "<li><a href=\"".$pageactive."?style=styles-standards\">";
+                        echo '<img src="./images/nightmode.png" alt="theme" class="litnit"/></a></li>';
+                    }
+                    else {
+                        echo "<li><a href=\"".$pageactive."?style=style-alternatif\">";
+                        echo '<img src="./images/lightmode.png" alt="theme" class="litnit"/></a></li>';
+                    }
                 ?>
                 </li>
                 <li><a href="?lang=eng" id="themehref"><img src="./images/language.png" alt="theme" class="litnit"/></a></li>

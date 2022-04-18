@@ -18,7 +18,7 @@
 
             </article>
 
-            <article>
+            <article class="geo">
                 <h3> Votre localisation approximative </h3>
                 <fieldset>
                     <legend id="legloc">Nous avons trouvé votre localisation approximativement</legend>
