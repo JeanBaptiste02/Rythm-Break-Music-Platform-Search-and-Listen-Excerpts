@@ -1,5 +1,39 @@
 <?php
     require "./include/functions.inc.php"
+
+?>
+
+<?php
+    session_start();
+    /*
+        default theme
+    */
+    if(empty($_COOKIE["theme"])){ 
+        setcookie("theme", "styles-standards", time()+3600);
+        $fichiercss = "styles-standards";
+    }
+    if(isset($_POST["theme"])){
+        setcookie("theme", $_POST["theme"], time()+3600);
+        $mainpage = basename($_SERVER["REQUEST_URI"]);
+        if(strpos($mainpage, "php") == false){
+            $mainpage = "index.php";
+        }
+        header("Location: $mainpage");
+        if($_POST["theme"] == "style-alternatif"){
+            $fichiercss = "styles-standards";
+        }
+        else{
+            $fichiercss = "style-alternatif";
+        }
+    }
+    if(isset($_COOKIE["theme"])){
+        if($_COOKIE["theme"] == "style-alternatif"){
+            $fichiercss = "styles-standards";
+        }
+        else{
+            $fichiercss = "style-alternatif";
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -11,7 +45,20 @@
         <meta name="keywords" content="Projet de Développement web" />
         <meta name="description" content="<?php echo $descrip; ?>" /> 
         <meta charset="UTF-8" />
-        <link rel="stylesheet" href = "<?php echo $link ?>" />
+
+        <?php
+            if(isset($_POST["theme"])){
+                echo "<link rel=\"stylesheet\" href=\"./css/" . $_POST["theme"] . ".css\"/>";
+            }
+            elseif(isset($_COOKIE["theme"])) {
+                echo "<link rel=\"stylesheet\" href=\"./css/" . $_COOKIE["theme"] . ".css\"/>";
+            }
+            else {
+                echo "<link rel=\"stylesheet\" href=\"styles-standards.css\"/>";
+            }
+        ?>
+
+
     </head>
 
     <body>
@@ -29,7 +76,14 @@
                 <li><a href="mainsongs.php"> Bollywood </a></li>
                 <li><a href="statistiques.php"> Statistiques </a></li>
                 <li><a href="annexe.php"> Annexe </a></li>
-                <li><a href="?theme=light" id="themehref"><img src="./images/lightmode.png" alt="theme" class="litnit"/></a></li>
+                <li>
+                <?php
+                    echo "<form class=\"theme\" method=\"post\">\n";
+                    echo "\t\t\t\t<input type=\"hidden\" name=\"theme\" value=\"$fichiercss\" />\n";
+                    echo "\t\t\t\t<input type=\"submit\" value=\" \" style=\"background-image: url(./images/lightmode.png);\" />\n";
+                    echo "</form>\n";
+                ?>
+                </li>
                 <li><a href="?lang=eng" id="themehref"><img src="./images/language.png" alt="theme" class="litnit"/></a></li>
             </ul>  
 		</nav>
