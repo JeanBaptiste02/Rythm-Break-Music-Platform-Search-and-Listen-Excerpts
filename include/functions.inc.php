@@ -47,7 +47,7 @@
         $regionCode = $loc['geoplugin_regionCode'];
         $region = $loc['geoplugin_region'];
 
-        $finaloc.=   "<p style='color:white'>Vous vous trouvez aux alentours de : $ville $regionName $regionCode $region $pays</p>";      
+        $finaloc.=   "<p>Vous vous trouvez aux alentours de : $ville $regionName $regionCode $region $pays</p>";      
         return $finaloc;         
     }
 

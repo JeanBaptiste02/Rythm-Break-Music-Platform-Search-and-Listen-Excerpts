@@ -14,7 +14,7 @@
                 <h3>Recherchez</h3>
                 <form action="recherche.php" method="get">
                     <fieldset>
-                        <legend style="color:cyan">Rythm Break</legend>
+                        <legend class="legmain">Rythm Break</legend>
                         <label for="mychoices">taper le nom de l'artiste</label>
                         <input type="text" name="nom" placeholder="Choisir un nom" />
                         <label for="mychoices">choisir le genre </label>
@@ -41,7 +41,7 @@
                     echo "<ol class='centerItems'>";
                     for ($i=0; $i<sizeof($nomart); $i++) {
                         echo '<article class="is">';
-                        echo "<li style='color:white; padding-right: 1%;'><table class='listeItemClass'><tr><td>".$nomart[$i]->name."</td>";
+                        echo "<li class='recpageclr'><table class='listeItemClass'><tr><td>".$nomart[$i]->name."</td>";
                         echo '<td>  <form action="informations.php" method="get">
                                     <input type="hidden" name="artist" value='.urlencode($nomart[$i]->name).' />
                                     <input type="submit" value="Details" />
@@ -68,7 +68,7 @@
                     echo "<ol class='centerItems'>";
                     for ($i=0; $i<sizeof($nomalb); $i++) {
                         echo '<article class="is">';
-                        echo "<li style='color:white; padding-right: 1%;'><table class='listeItemClass'><tr><td>".$nomalb[$i]->name."</td>";
+                        echo "<li class='recpageclr'><table class='listeItemClass'><tr><td>".$nomalb[$i]->name."</td>";
                         echo "<td> Artiste : ".$nomalb[$i]->artist."</td>";
                         echo '<td>  <form action="informations.php" method="get">
                                     <input type="hidden" name="album" value='.urlencode($nomalb[$i]->name).' />
@@ -98,7 +98,7 @@
                     for ($i=0; $i<sizeof($songs); $i++) {
                         echo '<article class="is">';
                         echo '<li><img src="./images/noimage.jpg" height="30" width="30" alt="song image"/></li>';
-                        echo "<li style='color:white';><table class='listeItemClass'><tr><td>".$songs[$i]->name."</td>";
+                        echo "<li class='recpageclr'><table class='listeItemClass'><tr><td>".$songs[$i]->name."</td>";
                         echo "<td> Artiste : ".$songs[$i]->artist."</td>";
                         echo '<td>  <form action="informations.php" method="get">
                                     <input type="hidden" name="songs" value='.urlencode($songs[$i]->name).' />

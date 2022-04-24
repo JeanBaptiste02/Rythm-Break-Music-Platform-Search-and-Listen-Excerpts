@@ -18,25 +18,31 @@
 			<tr>
 			    <td class="foot-lines"></td>
 				<td class="foot-lines"></td>
-                <td class="foot-lines"></td>
+                <td class="foot-lines" style="padding-top:10px;"><a href="recherche.php">Recherche</a></td>
 				<td class="foot-lines"><a href="apropos.php">A propos</a></td>
 			</tr>
 			<tr>
 		    	<td class="foot-lines">Projet de Dev Web 2022</td>
 				<td class="foot-lines"></td>
-				<td class="foot-lines"></td>
+				<td class="foot-lines" style="padding-top:10px;"><a href="informations.php">Informations</a></td>
                <td class="foot-lines"></td>
 			</tr>
 			<tr>
 				<td class="foot-lines">CY Cergy Paris Université</td>
 				<td class="foot-lines"></td>
-				<td class="foot-lines"></td>
+				<td class="foot-lines" style="padding-top:10px;"><a href="statistiques.php">Statistiques</a></td>
                 <td class="foot-lines"></td>
 			</tr>
 			<tr>
 				<td class="foot-lines"></td>
 				<td class="foot-lines"></td>
+				<td class="foot-lines" style="padding-top:10px;"><a href="bollywood.php">Bollywood</a></td>
+                <td class="foot-lines"></td>
+			</tr>
+			<tr>
 				<td class="foot-lines"></td>
+				<td class="foot-lines"></td>
+				<td class="foot-lines" style="padding-top:10px;"><a href="tendance.php">Tendances</a></td>
                 <td class="foot-lines">
 					<?php
 						echo getNbVistors();

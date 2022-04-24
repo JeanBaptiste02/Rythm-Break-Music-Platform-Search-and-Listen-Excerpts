@@ -17,7 +17,6 @@
                     <option value="singer"> Artiste </option>
                     <option value="album"> Album </option>
                     <option value="song"> Musique </option>
-                    <option value="others"> Autres </option>
                 </select>
                 <input type="submit" class ="inputSubmitIndex" value="rechercher" />  	
             </form>
@@ -47,7 +46,7 @@
             }
         ?>
 
-        <h4 style="color: cyan">Image au hasard</h2>
+        <h4 style="color: green">Image au hasard</h2>
         <figure>
             <img src="<?php echo $reper."/".$random_img ?>" class="randomimage">
             <figcaption></figcaption>

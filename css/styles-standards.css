@@ -255,7 +255,7 @@ article{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width:45%;
+    width:100%;
     border-radius:40px;
 }
 
@@ -268,6 +268,11 @@ figcaption{
 
 p{
     text-align: center;
+    color:white
+}
+
+.legmain{
+    color:cyan;
 }
 
 footer{
@@ -296,8 +301,15 @@ footer table {
 }
 
 footer table tbody tr td a{
+    font-size:18px;
     font-family:"Garamond";
     color: white;
+}
+
+footer table tbody tr td a:hover{
+    font-family:"Garamond";
+    color: gold;
+    transition:0.3s;
 }
 
 header nav{
@@ -390,9 +402,7 @@ pour la page d'informations
     background-color: none;
     color: white;
     text-align:center;
-    font-family:"Comic Sans MS";
-
-    
+    font-family:"Comic Sans MS";  
 }
 
 .details a{
@@ -468,12 +478,19 @@ h5{
     margin-left:90%;
 }
 
-.litnit{
+/* .litnit{
     width: 38px;
     margin-top: -15px;
     margin-left:auto;
     padding-left:auto;
     padding-top:14%;
+} */
+
+.litnit{
+    background: url(arrow.png) no-repeat;
+    width:32px; 
+    height:32px;
+   
 }
 
 .fstdiv{
@@ -497,3 +514,8 @@ section{
     width: 60%;
     margin-top: -2%;
  }
+
+ .recpageclr{
+    color:white;
+    padding-right: 1%;
+}

@@ -258,12 +258,12 @@ article{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width:45%;
+    width:100%;
     border-radius:40px;
 }
 
 figcaption{
-    color:white;
+    color:black;
     font-size: 15px;
     font-family: 'Goudy Old Style';
     text-align: center;
@@ -271,6 +271,11 @@ figcaption{
 
 p{
     text-align: center;
+    color:black;
+}
+
+.legmain{
+    color:darkblue;
 }
 
 footer{
@@ -299,8 +304,15 @@ footer table {
 }
 
 footer table tbody tr td a{
+    font-size:18px;
     font-family:"Garamond";
     color: white;
+}
+
+footer table tbody tr td a:hover{
+    font-family:"Garamond";
+    color:chartreuse;
+    transition:0.3s;
 }
 
 header nav{
@@ -378,12 +390,14 @@ ol li{
     list-style-type: none;  
 }
 
-
-
 .listeItemClass {
     width: 100%;
     padding: 1%;
     table-layout: fixed;
+}
+
+.center{
+    color:black;
 }
 
 /**
@@ -394,8 +408,6 @@ pour la page d'informations
     color: white;
     text-align:center;
     font-family:"Comic Sans MS";
-
-    
 }
 
 .details a{
@@ -471,14 +483,20 @@ h5{
     margin-left:90%;
 }
 
-.litnit{
+/* .litnit{
     width: 38px;
     margin-top: -15px;
     margin-left:auto;
     padding-left:auto;
     padding-top:14%;
-}
+} */
 
+.litnit{
+    background: url(arrow.png) no-repeat;
+    width:32px; 
+    height:32px;
+   
+}
 .fstdiv{
     position: relative;
     left: -55%;
@@ -499,4 +517,9 @@ section{
  .geo{
     width: 60%;
     margin-top: -2%;
+ }
+
+ .recpageclr{
+     color:black;
+     padding-right: 1%;
  }
