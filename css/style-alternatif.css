@@ -426,20 +426,22 @@ pour la page d'informations
 }
 
 .boxtrysection {
-    margin:6%;
-    max-width: 80%;
-    display: flex;
-    overflow-x: auto;
+    padding: 1%;
+    min-width: 20%;
+    border-radius: 20px;
+    display: inline;
+    text-align: center; 
 }
 
 .boxtrysection h2 {
-    margin-top: 30px;
+    margin-top:100px;
+    margin-bottom:1px;
 }
 
 .bowItems{
+    overflow-x: auto;
     display: flex;
-    overflow-x: scroll;
-    padding-top: 20%;
+    padding-top: 10%;
     padding-bottom:2%;
     padding-left:2%;
     padding-right:2%;
@@ -447,18 +449,34 @@ pour la page d'informations
 
 .bowItems article{
     color: white;
-    display: flex;
-    flex-direction: column;
-    margin: 3%;
+    margin-top: 50px;
+    padding: 2%;
+    min-width: 20%;
+    margin: 1%;
+    display: inline;
     justify-content: space-between;
-    width: 185px;
-    height:auto;
     transition: 0.4s;
     border-radius: 30px;
+    border-right: 2px solid #ffff;
+    border-left: 2px solid #fff;
 }
+
 .bowItems article:hover{
     transform: scale(1.1);
-    box-shadow: 1px 1px 18px 5px white;
+    box-shadow: 1px 1px 18px 5px #fff;
+}
+
+.bowItems input[type="submit"]{
+    background-color:#00c9ff;
+    color:white;
+    font-size:16px;
+}
+
+.bowItems input[type="submit"]:hover{
+    transition:0.4s;
+    background-color:#0184f8;
+    color:white;
+    font-size:16px;
 }
 
 .randomimage{
