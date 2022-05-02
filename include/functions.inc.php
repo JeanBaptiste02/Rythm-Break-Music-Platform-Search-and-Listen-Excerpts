@@ -47,7 +47,7 @@
         $regionCode = $loc['geoplugin_regionCode'];
         $region = $loc['geoplugin_region'];
 
-        $finaloc.=   "<p>Vous vous trouvez aux alentours de : $ville $regionName $regionCode $region $pays</p>";      
+        $finaloc.=   "<p style='color:white'>Vous vous trouvez aux alentours de : $ville $regionName $regionCode $region $pays</p>";      
         return $finaloc;         
     }
 
@@ -57,18 +57,15 @@
      * @param eltrecherche element recherche 
      */
 
-    function getArtist(string $eltrecherche): array{
-        $apikey = LASTFM_API_KEY;
-        //on recupere le contenu
-        $json2 = file_get_contents("https://ws.audioscrobbler.com/2.0/?method=artist.search&artist=".$eltrecherche."&api_key=".$apikey."&format=json");
-        //on accede a des valeurs decode
-        $json2 = json_decode($json2);
-        //on cherche une valeure precise
-        $json3 = $json2->results;
-        $json4 = $json3->artistmatches;
-        $json5 = $json4->artist;
-        //on retourne les valeurs
-        return $json5;
+    function getArtists(string $eltrecherche): array{
+        $jsonStr = file_get_contents("https://api.deezer.com/search/artist?q=$eltrecherche&limit=24");
+        $jsonArr = json_decode($jsonStr, true);
+            
+        $nameArray = array();
+        foreach($jsonArr['data'] as $row) {
+            $nameArray[] = $row['name'];
+        }
+        return $nameArray;
     }
 
     /**
@@ -145,13 +142,93 @@
      * @param name designe le nom de l'artiste
      * @return json2 retourne la valeure souhaitee
      */
-    function getArtistsDetails(string $name): array{
-        $apikey = LASTFM_API_KEY;
-        $json2 = file_get_contents("https://ws.audioscrobbler.com/2.0/?method=artist.getInfo&api_key=".$apikey."&artist=".$name."&format=json");
+    function getArtistsDetails(int $id): array{
+        $json2 = file_get_contents("https://api.deezer.com/artist/$id");
         $json2 = json_decode($json2, true);
-        return $json2["artist"];
+        return $json2;
     }
 
+     
+    function getArtistsSimilar(int $id): array{
+        $json2 = file_get_contents("https://api.deezer.com/artist/$id/related");
+        $json2 = json_decode($json2, true);
+        
+        $nameArray = array();
+        foreach($json2['data'] as $row) {
+            $nameArray[] = $row['name'];
+        }
+        return $nameArray;
+    }
+
+    function getIdArtist2(string $name): int {
+        
+        $jsonStr = file_get_contents("https://www.theaudiodb.com/api/v1/json/2/search.php?s=$name");
+        $jsonArr = json_decode($jsonStr, true);
+        
+        $nameArtist = urldecode($name);
+
+        $id = 0;
+
+        $cpt=1;
+        if($jsonArr['artists'] != null) {
+            foreach($jsonArr['artists'] as $row) {
+                if($row['strArtist'] == $nameArtist && $cpt > 0) {
+                    $id = $row['idArtist'];
+                    $cpt--;
+                }  
+            }
+        }
+      
+        return $id;
+    }
+
+    function getArtistDescription(int $id): string{
+        $json = file_get_contents("https://theaudiodb.com/api/v1/json/2/artist.php?i=$id");
+        $json = json_decode($json, true);
+        
+        $cpt = 1;
+        foreach($json['artists'] as $row) {
+             if($row['strBiographyFR'] != null && $cpt > 0) {
+                $desc = $row['strBiographyFR'];
+                $cpt--;
+            } else if($row['strBiographyEN'] != null && $row['strBiographyFR'] == null && $cpt > 0) {
+                $desc = $row['strBiographyEN'];
+                $cpt--;
+            } else if($row['strBiographyEN'] == null && $row['strBiographyFR'] == null && $cpt > 0) {
+                $desc = "";
+                $cpt--;
+            }
+        }
+
+        return $desc;
+    }
+
+    function getIdArtist(string $name): int {
+        $name2 = urlencode($name);
+        $jsonStr = file_get_contents("https://api.deezer.com/search/artist?q=$name2");
+        $jsonArr = json_decode($jsonStr, true);
+        
+        $nameArtist = urldecode($name);
+
+        $cpt=1;
+        foreach($jsonArr['data'] as $row) {
+            if(($row['name'] == $nameArtist) && $cpt > 0) {
+                $id = $row['id'];
+                $cpt--;
+            }  
+        }
+        return $id;
+    }
+
+    function getArtistPicture(int $id): string {
+        $jsonStr = file_get_contents("https://api.deezer.com/artist/$id");
+        $jsonArr = json_decode($jsonStr, true);
+
+        $url = $jsonArr['picture_medium'];
+        return $url;
+    }
+   
+    
     /**
      * permet d'avoir le nombre de visites en fonction du rafraichissement des pages du site
      * @author Damodarane&Elumalai

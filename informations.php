@@ -105,42 +105,58 @@
             }
 
             if (isset($_GET["artist"])){
-                $details = getArtistsDetails($_GET["artist"]);
+
+                $details = getArtistsDetails($_GET["id"]);
                 echo "<h2>Détails</h2> \n";
-                echo "<ol> \n";
-                echo "<li>Artiste : ".$details["name"]."</li> \n";
-                echo "<li>Nombres d'audiences : ".$details["stats"]["listeners"]."</li> \n";
-                echo "<li>Nombres d'écoutes : ".$details["stats"]["playcount"]."</li> \n";
-                echo "<li>Description : ".$details["bio"]["summary"]."</li> \n";
-
-                $url = $details["image"]["3"]["#text"];
-                if(empty($url)) {
-                    echo "<figure> \n";
-                    echo "<img class='monimage' src='./images/noartist.png' alt='image par default de lalbum' /> \n";
-                    echo "</figure> \n";
-                } else {
-                    echo "<figure> \n";
-                    echo "<img class='monimage' src='$url' alt='image de l'album' width='250' height='250' /> \n";
-                    echo "</figure> \n";
-                }
                
-                if (!empty($details["similar"])) {
-                    for( $n = 0 ; $n < count($details["similar"]["artist"]); $n++) {
-                        $sim.= $details["similar"]["artist"][$n]["name"];
-                        $sim.= " ";
-                    }
-                    echo "<li> Les artistes similaires : ".$sim."</li> \n";
-                }
+                echo "<div class='sec'> \n";
+                $urlPicture = getArtistPicture($_GET["id"]);
+                echo "<figure> \n";
+                echo "<img src='$urlPicture' alt='image de lartiste' width='250' height='250' /> \n";
+                echo "</figure> \n";
 
-                if(!empty($details["tags"])) {
-                    for( $n = 0 ; $n < count($details["tags"]["tag"]); $n++) {
-                        $tags.= $details["tags"]["tag"][$n]["name"];
-                        $tags.= " ";
-                        }
-                    echo "<li> Tags : ".$tags."</li> \n";
-                }
+                echo "<div id='details-info'> \n \t";
+                echo "<div id='details-info-title'> \n \t \t";
+                $name = $details["name"];
+                echo "<h3>$name</h3> \n";
+                echo "<p class='p2'>Nombres d'albums : ".$details["nb_album"]."</p> \n";
+                echo "<p class='p2'>Nombres d'audiences : ".$details["nb_fan"]."</p> \n";
+                echo "</div> \n \t \t";
                
-                echo "</ol> \n";   
+                echo "<div id='details-info-description'> \n \t \t";
+                $descId = getIdArtist2($_GET["artist"]);
+                if($descId != 0) {
+                    $desc = getArtistDescription($descId);
+                    if(strlen($desc) != 0) {
+                        echo "<p class='p2'> Biographie : ".$desc."</p> \n";
+                    } 
+                }
+                echo "</div> \n \t \t"; 
+                echo "</div> \n \t";
+                echo "</div> \n";
+
+                $artSimilar = getArtistsSimilar($_GET["id"]);
+                if (!empty($artSimilar) && count($artSimilar) != 0) {
+                    echo "<h3> Les artistes similaires : </h3> \n ";
+                    echo "<div class='grid-containernumb2'> \n";
+                    foreach($artSimilar as $key => $value) {
+                        $artistSimName = urlencode($value);
+                        $idArtSim = getIdArtist($value);  
+                        $urlPictureSim = getArtistPicture($idArtSim); 
+                        echo "<article>";
+                        echo "<figure> \n";
+                        echo "<a href='informations.php?artist=$artistSimName&id=$idArtSim'> \n";
+                        echo "<img src='$urlPictureSim' alt='image de lartiste' width='150' height='150' /> \n";
+                        echo "</a> \n";
+                        echo "</figure> \n";
+                        echo "<figcaption> \n";
+                        echo "<h4>".$value."</h4> \n";
+                        echo "</figcaption> \n";
+                        echo "</article>";
+                    }  
+                    echo "</div>";
+                } 
+               
             }
 
 
