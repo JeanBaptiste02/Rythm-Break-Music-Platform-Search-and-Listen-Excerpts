@@ -1,6 +1,6 @@
 # Rythm Break
 
-Rythm Break est un projet réalisé par DAMODARANE Jean-Baptiste et ELUMALAI Sriguru, étudiants à CY Cergy Paris Université dans le cadre du module de **Développement Web 2021/2022**.
+Rythm Break est un projet réalisé par DAMODARANE Jean-Baptiste et ELUMALAI Sriguru, étudiants en Licence de deuxième année d'Informatique, à CY Cergy Paris Université dans le cadre du module de **Développement Web 2021/2022**.
 
 ![CY Cergy Paris Université](https://upload.wikimedia.org/wikipedia/fr/thumb/6/69/Logo_CY_Cergy_Paris_Universit%C3%A9.svg/129px-Logo_CY_Cergy_Paris_Universit%C3%A9.svg.png)
 
@@ -8,11 +8,8 @@ Rythm Break est un projet réalisé par DAMODARANE Jean-Baptiste et ELUMALAI Sri
 ## Description du projet
 
 Notre projet porte sur la conception d'un site web avec des pages dynamiques en PHP. (Le projet est réalisé en PHP, HTML5 & CSS3.)
-Ce projet se base sur la création d'un site web avec des pages dynamiques réalisées en PHP qui résume les connaissances apprises pendant le module.
 
-Ce site web se base sur les musiques.
-
-Ce site web utilise les APIs de Lastfm et de Deezer.
+Ce site web se base sur la MUSIC et utilise les APIs de Lastfm et de Deezer.
 
 ### URLs
 
