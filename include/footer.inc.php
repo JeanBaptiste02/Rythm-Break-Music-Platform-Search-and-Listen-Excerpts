@@ -22,12 +22,6 @@
 				<td class="foot-lines"><a href="apropos.php">A propos</a></td>
 			</tr>
 			<tr>
-		    	<td class="foot-lines">Projet de Dev Web 2022</td>
-				<td class="foot-lines"></td>
-				<td class="foot-lines" style="padding-top:10px;"><a href="informations.php">Informations</a></td>
-               <td class="foot-lines"></td>
-			</tr>
-			<tr>
 				<td class="foot-lines">CY Cergy Paris Université</td>
 				<td class="foot-lines"></td>
 				<td class="foot-lines" style="padding-top:10px;"><a href="statistiques.php">Statistiques</a></td>
@@ -36,8 +30,16 @@
 			<tr>
 				<td class="foot-lines"></td>
 				<td class="foot-lines"></td>
-				<td class="foot-lines" style="padding-top:10px;"><a href="bollywood.php">Bollywood</a></td>
-                <td class="foot-lines"></td>
+				<td class="foot-lines" style="padding-top:10px;"><a href="historique.php">Historique</a></td>
+                <td class="foot-lines">
+					<?php
+						if(isset($_COOKIE['lastDay']) && isset($_COOKIE['lastHour'])){
+            				$visitDay = $_COOKIE['lastDay'];
+            				$visitHour = $_COOKIE['lastHour'];
+            				echo "<p>Dernière visite le $visitDay à $visitHour</p>";
+        				}
+					?>
+				</td>
 			</tr>
 			<tr>
 				<td class="foot-lines"></td>
@@ -52,19 +54,6 @@
 		</tbody>
 	</table>  
 
-
-<!--
-
-	<section class="lastclass">
-		<h5> PLus d'options </h5>
-		<article>
-			<div>
-				<a href="#"><img src="./images/up.png" alt="theme" id="themeicon" class="upbutton" /></a>
-			</div>
-		</article>
-	</section>
-
--->
 </footer>
 </body>
 </html>

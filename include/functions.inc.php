@@ -1,7 +1,8 @@
 <?php
 
+    /*------------------------------------------------Page Annexe-------------------------------------------------------*/
+
     define('NASA_API_KEY','8voCfhA1Kwo3y4ubOB0p39kFwq8Dlggiq0ofJ5qT');
-    define("LASTFM_API_KEY","ee832f2cbf4899e1409329429c40a34f");
 
     /**
      * permet d'avoir les image du jour de Apod en fonction du jour
@@ -51,6 +52,8 @@
         return $finaloc;         
     }
 
+    /*------------------------------------------------Page Recherche-------------------------------------------------------*/
+
     /**
      * permet d'avoir les artistes
      * @author Damodarane&Elumalai
@@ -58,14 +61,10 @@
      */
 
     function getArtists(string $eltrecherche): array{
-        $jsonStr = file_get_contents("https://api.deezer.com/search/artist?q=$eltrecherche&limit=24");
+        $jsonStr = file_get_contents("https://api.deezer.com/search/artist?q=$eltrecherche");
         $jsonArr = json_decode($jsonStr, true);
-            
-        $nameArray = array();
-        foreach($jsonArr['data'] as $row) {
-            $nameArray[] = $row['name'];
-        }
-        return $nameArray;
+       
+        return $jsonArr;
     }
 
     /**
@@ -75,38 +74,26 @@
      */
 
     function getAlbums(string $eltrecherche): array{
-        $apikey = LASTFM_API_KEY;
-        //on recupere le contenu
-        $json2 = file_get_contents("http://ws.audioscrobbler.com/2.0/?method=album.search&album=".$eltrecherche."&api_key=".$apikey."&format=json");
-        //on accede a des valeurs decode
-        $json2 = json_decode($json2);
-        //on cherche une valeure precise
-        $json3 = $json2->results;
-        $json4 = $json3->albummatches;
-        $json5 = $json4->album;
-        //on retourne la valeure
-        return $json5;
+        $jsonStr = file_get_contents("https://api.deezer.com/search/album?q=$eltrecherche");
+        $jsonArr = json_decode($jsonStr, true);
+       
+        return $jsonArr;
     }
 
      /**
-     * permet d'avour les musiques
+     * permet d'avoir les musiques
      * @author Damodarane&Elumalai
      * @param eltrecherche element recherche 
      */
 
     function getTracks(string $eltrecherche): array{
-        $apikey = LASTFM_API_KEY;
-        //on recupere le contenu
-        $json2 = file_get_contents("http://ws.audioscrobbler.com/2.0/?method=track.search&track=".$eltrecherche."&api_key=".$apikey."&format=json");
-        //on accede a des valeurs decode
-        $json2 = json_decode($json2);
-        //on cherche une valeure precise
-        $json3 = $json2->results;
-        $json4 = $json3->trackmatches;
-        $json5 = $json4->track;
-        //on retourne la valeure
-        return $json5;
+        $jsonStr = file_get_contents("https://api.deezer.com/search/track?q=$eltrecherche");
+        $jsonArr = json_decode($jsonStr, true);
+       
+        return $jsonArr;
     }
+
+    /*------------------------------------------------Informations sur la musique-------------------------------------------------------*/
 
     /**
      * permet d'avoir des détailes sur la musique choisie
@@ -115,12 +102,22 @@
      * @param artiste designe l'artiste correspondant a la musique
      * @return json2 retourne la valeure souhaitee
      */
-    function getTracksDetails(string $song, string $artiste): array{
-        $apikey = LASTFM_API_KEY;
-        $json2 = file_get_contents("https://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=".$apikey."&artist=".$artiste."&track=".$song."&format=json");
+    function getTracksDetails(int $id): array{
+        $json2 = file_get_contents("https://api.deezer.com/track/$id");
         $json2 = json_decode($json2, true);
-        return $json2["track"];
+        return $json2;
     }
+
+    function getTrackPicture(int $id): string {
+        $jsonStr = file_get_contents("https://api.deezer.com/track/$id");
+        $jsonArr = json_decode($jsonStr, true);
+
+        $url = $jsonArr['album']['cover_medium'];
+    
+        return $url;
+    }
+
+    /*------------------------------------------------Informations sur lalbum-------------------------------------------------------*/
 
      /**
      * permet d'avoir des détails sur l'album choisie
@@ -129,12 +126,29 @@
      * @param artiste designe l'artiste correspondant de l'album
      * @return json2 retourne la valeure souhaitee
      */
-    function getAlbumsDetails(string $album, string $artiste): array{
-        $apikey = LASTFM_API_KEY;
-        $json2 = file_get_contents("https://ws.audioscrobbler.com/2.0/?method=album.getInfo&api_key=".$apikey."&artist=".$artiste."&album=".$album."&format=json");
+    function getAlbumsDetails(int $id): array{
+        $json2 = file_get_contents("https://api.deezer.com/album/$id");
         $json2 = json_decode($json2, true);
-        return $json2["album"];
+        return $json2;
     }
+
+    function getAlbumPicture(int $id): string {
+        $jsonStr = file_get_contents("https://api.deezer.com/album/$id");
+        $jsonArr = json_decode($jsonStr, true);
+
+        $url = $jsonArr['cover_medium'];
+    
+        return $url;
+    }
+
+    function getTracksOfAlbum(string $url): array {
+        $jsonStr = file_get_contents($url);
+        $jsonArr = json_decode($jsonStr, true);
+            
+        return $jsonArr;
+    }
+
+    /*------------------------------------------------Informations sur lartiste-------------------------------------------------------*/
 
      /**
      * permet d'avoir des détails sur l'artiste choisie
@@ -148,61 +162,7 @@
         return $json2;
     }
 
-     
-    function getArtistsSimilar(int $id): array{
-        $json2 = file_get_contents("https://api.deezer.com/artist/$id/related");
-        $json2 = json_decode($json2, true);
-        
-        $nameArray = array();
-        foreach($json2['data'] as $row) {
-            $nameArray[] = $row['name'];
-        }
-        return $nameArray;
-    }
-
-    function getIdArtist2(string $name): int {
-        
-        $jsonStr = file_get_contents("https://www.theaudiodb.com/api/v1/json/2/search.php?s=$name");
-        $jsonArr = json_decode($jsonStr, true);
-        
-        $nameArtist = urldecode($name);
-
-        $id = 0;
-
-        $cpt=1;
-        if($jsonArr['artists'] != null) {
-            foreach($jsonArr['artists'] as $row) {
-                if($row['strArtist'] == $nameArtist && $cpt > 0) {
-                    $id = $row['idArtist'];
-                    $cpt--;
-                }  
-            }
-        }
-      
-        return $id;
-    }
-
-    function getArtistDescription(int $id): string{
-        $json = file_get_contents("https://theaudiodb.com/api/v1/json/2/artist.php?i=$id");
-        $json = json_decode($json, true);
-        
-        $cpt = 1;
-        foreach($json['artists'] as $row) {
-             if($row['strBiographyFR'] != null && $cpt > 0) {
-                $desc = $row['strBiographyFR'];
-                $cpt--;
-            } else if($row['strBiographyEN'] != null && $row['strBiographyFR'] == null && $cpt > 0) {
-                $desc = $row['strBiographyEN'];
-                $cpt--;
-            } else if($row['strBiographyEN'] == null && $row['strBiographyFR'] == null && $cpt > 0) {
-                $desc = "";
-                $cpt--;
-            }
-        }
-
-        return $desc;
-    }
-
+    
     function getIdArtist(string $name): int {
         $name2 = urlencode($name);
         $jsonStr = file_get_contents("https://api.deezer.com/search/artist?q=$name2");
@@ -225,31 +185,76 @@
         $jsonArr = json_decode($jsonStr, true);
 
         $url = $jsonArr['picture_medium'];
+    
         return $url;
     }
-   
-    
-    /**
-     * permet d'avoir le nombre de visites en fonction du rafraichissement des pages du site
-     * @author Damodarane&Elumalai
-     */
-    function getNbVistors(){
-        $fileName = 'vistors.txt'; 
-       
-        $filerray = file($fileName);
-        $counter = $filerray[0] + 1;
-        $openFile = fopen($fileName,'w+');
-        fwrite($openFile, "$counter \n");
-        fclose($openFile);
-        if($counter == 1)
-        {
-        print 'Nombre de Visiteur : 1';
-        }
-        else
-        {
-        print 'Nombre de Visites : '.$counter .'';
-        }
+
+    function getAlbumsOfArtist(int $idArtist) : array{
+        $jsonStr = file_get_contents("https://api.deezer.com/artist/$idArtist/albums");
+        $jsonArr = json_decode($jsonStr, true);
+            
+        return $jsonArr;
     }
+
+    function getTopSongsOfArtist(int $idArtist) : array{
+        $jsonStr = file_get_contents("https://api.deezer.com/artist/$idArtist/top?limit=20");
+        $jsonArr = json_decode($jsonStr, true);
+            
+        return $jsonArr;
+    }
+
+        
+    function getArtistsSimilar(int $id): array{
+        $json2 = file_get_contents("https://api.deezer.com/artist/$id/related");
+        $json2 = json_decode($json2, true);
+        
+        return $json2;
+    }
+
+    function getIdArtist2(string $name): int { // pour lapi theaudio
+        
+        $jsonStr = file_get_contents("https://www.theaudiodb.com/api/v1/json/2/search.php?s=$name");
+        $jsonArr = json_decode($jsonStr, true);
+        
+        $nameArtist = urldecode($name);
+
+        $id = 0;
+
+        $cpt=1;
+        if($jsonArr['artists'] != null) {
+            foreach($jsonArr['artists'] as $row) {
+                if($row['strArtist'] == $nameArtist && $cpt > 0) {
+                    $id = $row['idArtist'];
+                    $cpt--;
+                }  
+            }
+        }
+      
+        return $id;
+    }
+
+    function getArtistDescription(int $id): string{ // pour lapi theaudio
+        $json = file_get_contents("https://theaudiodb.com/api/v1/json/2/artist.php?i=$id");
+        $json = json_decode($json, true);
+        
+        $cpt = 1;
+        foreach($json['artists'] as $row) {
+             if($row['strBiographyFR'] != null && $cpt > 0) {
+                $desc = $row['strBiographyFR'];
+                $cpt--;
+            } else if($row['strBiographyEN'] != null && $row['strBiographyFR'] == null && $cpt > 0) {
+                $desc = $row['strBiographyEN'];
+                $cpt--;
+            } else if($row['strBiographyEN'] == null && $row['strBiographyFR'] == null && $cpt > 0) {
+                $desc = "";
+                $cpt--;
+            }
+        }
+
+        return $desc;
+    }
+
+    /*------------------------------------------------Page statistique-------------------------------------------------------*/
 
     function readCSV($filename) {
         $rows = array();
@@ -270,6 +275,52 @@
 
         fclose($file);
     }
+
+    /*------------------------------------------------Page tendance-------------------------------------------------------*/
+
+    function getTracksTrending(): array{
+        $json2 = file_get_contents("https://api.deezer.com/chart/0/tracks");
+        $json2 = json_decode($json2, true);
+        return $json2;
+    }
+
+    function getAlbumsTrending(): array{
+        $json2 = file_get_contents("https://api.deezer.com/chart/0/albums");
+        $json2 = json_decode($json2, true);
+        return $json2;
+    }
+
     
+    function getArtistsTrending(): array{
+        $json2 = file_get_contents("https://api.deezer.com/chart/0/artists");
+        $json2 = json_decode($json2, true);
+        return $json2;
+    }
+
+
+
+    /*------------------------------------------------Compléments-------------------------------------------------------*/
+
+     /**
+     * permet d'avoir le nombre de visites en fonction du rafraichissement des pages du site
+     * @author Damodarane&Elumalai
+     */
+    function getNbVistors(){
+        $fileName = 'vistors.txt'; 
+       
+        $filerray = file($fileName);
+        $counter = $filerray[0] + 1;
+        $openFile = fopen($fileName,'w+');
+        fwrite($openFile, "$counter \n");
+        fclose($openFile);
+        if($counter == 1)
+        {
+        print 'Nombre de visiteur : 1';
+        }
+        else
+        {
+        print 'Nombre de visites : '.$counter .'';
+        }
+    }
 
 ?>

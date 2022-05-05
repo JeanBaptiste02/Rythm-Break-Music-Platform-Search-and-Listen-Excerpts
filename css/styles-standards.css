@@ -345,6 +345,7 @@ label{
 }
 
 .global{
+    color:white;
     text-align: center;
     font-family: 'cambria maths';
     font-size: 18px;
@@ -631,4 +632,74 @@ figcaption h5:hover{
   .grid-containernumb2 article figure a img{
     width:180px;
     border-radius:90px;
+}
+
+.lastMusiq {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width:15%;
+    height:15%;
+    border-radius:70%;
+}
+
+.grid-containernumb3 {
+    display:-webkit-inline-box;
+    border-radius:20px;
+    box-shadow: 2px 2px 18px 5px #545151;
+    margin:90px ;
+    list-style-type: none;  
+    height : 360px;
+    padding-left:20px;
+    width:100%;
+    overflow-x: auto;
+}
+
+.grid-containernumb3 figure a img{
+    padding-top:80px;
+    width:100%;
+    border-radius:30px;
+    transition:1s;
+
+}
+
+.grid-containernumb3 figcaption h4{
+      color:white;
+      padding-top:80px;
+}
+
+.grid-containernumb3 figure a img:hover{
+    transform: scale(1.1);
+    transition:0.4s;
+}
+
+
+.grid-containernumb4 {
+    display:-webkit-inline-box;
+    border-radius:20px;
+    box-shadow: 2px 2px 18px 5px #545151;
+    margin:90px ;
+    list-style-type: none;  
+    height : 330px;
+    padding-left:20px;
+    width:100%;
+    overflow-x: auto;
+}
+
+.grid-containernumb4 figure a img{
+    padding-top:30px;
+    width:90%;
+    border-radius:30px;
+    transition:1s;
+
+}
+
+.grid-containernumb4 figcaption h4{
+      color:white;
+      padding-top:80px;
+}
+
+.grid-containernumb4 figure a img:hover{
+    transform: scale(1.1);
+    transition:0.4s;
 }

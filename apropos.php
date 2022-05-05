@@ -13,7 +13,7 @@
             <img src="./images/we.png" alt="logo jb" width="150" height="150"/>
             <figcaption>D.JB</figcaption>
         </figure>
-        <p class="global" style="color:white">
+        <p class="global">
         Etudiant en formation d'informatique en deuxième de licence à <strong>CY Cergy Paris Université</strong>.
         Passioné dans le domaine de développement/programmation web et de software. 
         </p>
@@ -22,7 +22,7 @@
             <img src="./images/we.png" alt="logo sri" width="150" height="150"/>
             <figcaption>E.SRI</figcaption>
         </figure>
-        <p class="global" style="color:white; margin-bottom:80px;">
+        <p class="global" style="margin-bottom:80px;">
             Etudiant en formation en deuxième de licence à <strong>CY Cergy Paris Université</strong>.
             Passioné dans le domaine hard ware et programmation.
         </p>

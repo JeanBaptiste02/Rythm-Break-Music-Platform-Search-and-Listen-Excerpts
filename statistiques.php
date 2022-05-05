@@ -7,28 +7,14 @@
 ?> 
 
     <main>
-        <section class="boxtrysection">
-            <h2>Liste des musiques consultés</h2>
-            <div class="bowItems">
-        <?php
-            $list = readCSV('data.csv');
-            for ($i=1; $i<sizeof($list); $i++) {
-                echo '<article>';
-                echo "<p style='black'> Nom : ".$list[$i][0]."</p>";
-                echo "<p style='black'> Artiste : ".$list[$i][1]."</p>";
-                echo "<p style='color:#7FFF00';> Vue : ".$list[$i][2]."</p>";
-                echo '<p>  <form action="informations.php" method="get">
-                            <input type="hidden" name="songs" value='.urlencode($list[$i][0]).' />
-                            <input type="hidden" name="artiste" value='.urlencode($list[$i][1]).' />
-                            <input type="submit" value="Details" />
-                            </form>
-                </p>';
-                echo "</article>";
-            }
-            
-        ?>  
-        </div>
-        </section>
+        <section>
+            <article>
+        <p style="color: white; font-size: 90%;">
+            EN CONSTRUCTION.....
+        </p>
+</article>
+
+</section>
 
     </main>
 

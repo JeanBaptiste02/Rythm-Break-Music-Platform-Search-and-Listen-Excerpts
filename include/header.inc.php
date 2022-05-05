@@ -11,6 +11,19 @@
         setcookie('choix', "$style", time()+3600); //le cookie espire dans 1heure = 3600secondes
         $_COOKIE['choix'] = $style;
     }
+
+   
+    $expire = 60 * 60 * 24 * 60 + time(); // date dexpiration du cookie
+    setcookie('lastDay', date("d/m/Y"), $expire);
+    setcookie('lastHour', date("H:i"), $expire);
+
+    $songName = $_GET["songs"];
+    $idSong = $_GET["id"];
+    if((isset($songName) && !empty($songName)) && (isset($idSong) && !empty($idSong))) {
+        setcookie('songName', $songName, $expire);
+        setcookie('idSong', $idSong, $expire);
+    }
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -50,7 +63,7 @@
             <ul class="nav_links">
                 <li><a href="recherche.php"> Rechercher </a></li>
                 <li><a href="tendance.php"> Tendances </a></li>
-                <li><a href="mainsongs.php"> Bollywood </a></li>
+                <li><a href="historique.php"> Historique </a></li>
                 <li><a href="statistiques.php"> Statistiques </a></li>
                 <li><a href="annexe.php"> Annexe </a></li>
                 <li>
@@ -66,7 +79,6 @@
                     }
                 ?>
                 </li>
-                <li><a href="?lang=eng" id="themehref"><img src="./images/language.png" alt="theme" class="litnit"/></a></li>
             </ul>  
 		</nav>
     </header>

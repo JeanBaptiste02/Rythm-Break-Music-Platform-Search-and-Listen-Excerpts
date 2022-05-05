@@ -348,6 +348,7 @@ label{
 }
 
 .global{
+    color:black;
     text-align: center;
     font-family: 'cambria maths';
     font-size: 18px;
