@@ -8,7 +8,7 @@ Rythm Break est un projet réalisé par DAMODARANE Jean-Baptiste et ELUMALAI Sri
 ## Description du projet
 
 Notre projet porte sur la conception d'un site web avec des pages dynamiques en PHP. (Le projet est réalisé en PHP, HTML5 & CSS3.)
-Ce projet consiste en la création d'un site web avec des pages dynamiques réalisées en PHP qui résume les connaissances apprises pendant le module.
+Ce projet se base sur la création d'un site web avec des pages dynamiques réalisées en PHP qui résume les connaissances apprises pendant le module.
 
 Ce site web se base sur les musiques.
 
