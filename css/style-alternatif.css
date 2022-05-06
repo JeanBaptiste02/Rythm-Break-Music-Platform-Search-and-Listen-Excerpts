@@ -608,12 +608,13 @@ section{
 figcaption h5{
     font-size:14px;
     color:rgb(13, 115, 240);
-    font-family: 'Comic Sans MS'
+    font-family: 'Comic Sans MS';
+    transition:2s;
 }
 
 figcaption h5:hover{
-    font-size:16px;
-    color:#03a2a2;
+    transform: translateY(-5px);
+    color:#f800b9;
     font-family: 'Comic Sans MS';
     transition:1s;
 }

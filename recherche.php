@@ -20,7 +20,7 @@
                 <form action="recherche.php" method="get">
                     <fieldset>
                         <legend style="color:cyan">Rythm Break</legend>
-                        <label for="mychoices">taper le nom de l'artiste</label>
+                        <label for="mychoices">Recherchez</label>
                         <input type="text" id="mychoices" name="nom" placeholder="Choisir un nom" value="<?php echo $search; ?>" />
                         <label for="mychoices">choisir le genre </label>
                         <select name="type">
