@@ -36,7 +36,7 @@
 						if(isset($_COOKIE['lastDay']) && isset($_COOKIE['lastHour'])){
             				$visitDay = $_COOKIE['lastDay'];
             				$visitHour = $_COOKIE['lastHour'];
-            				echo "<p>Dernière visite le $visitDay à $visitHour</p>";
+            				echo "<p style='color:white;'>Dernière visite le $visitDay à $visitHour</p>";
         				}
 					?>
 				</td>
