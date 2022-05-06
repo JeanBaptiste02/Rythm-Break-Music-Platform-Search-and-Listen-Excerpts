@@ -648,7 +648,7 @@ figcaption h5:hover{
 .grid-containernumb3 {
     display:-webkit-inline-box;
     border-radius:20px;
-    box-shadow: 2px 2px 18px 5px #545151;
+    box-shadow: 2px 2px 18px 5px #ffffff;
     margin:90px ;
     list-style-type: none;  
     height : 360px;
@@ -719,5 +719,5 @@ figcaption h5:hover{
 }
 #plansite a:hover{
     transition: 0.3s;
-    color: #00247b;
+    color: #1249c9;
 }
