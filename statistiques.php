@@ -7,14 +7,41 @@
 ?> 
 
     <main>
-        <section>
-            <article>
-        <p style="color: white; font-size: 90%;">
-            EN CONSTRUCTION.....
-        </p>
-</article>
+        <section class="boxtrysection">
+            <h2>Liste des musiques consultés</h2>
+           
+        <?php
 
-</section>
+            echo "<figure> \n";
+            echo "<img src='./graphmusic.php' alt='Graphique représentant le nombre de visites par musique' /> \n";
+            echo "</figure> \n";
+
+           
+        ?>  
+        
+        </section>
+        <section class="boxtrysection">
+            <h2>Liste des albums consultés</h2>
+        <?php
+
+            echo "<figure> \n";
+            echo "<img src='./graphalbum.php' alt='Graphique représentant le nombre de visites par album' /> \n";
+            echo "</figure> \n";
+
+           
+        ?>  
+        </section>
+        <section class="boxtrysection">
+            <h2>Liste des artistes consultés</h2>
+        <?php
+
+            echo "<figure> \n";
+            echo "<img src='./graphartist.php' alt='Graphique représentant le nombre de visites par artiste' /> \n";
+            echo "</figure> \n";
+
+          
+        ?>  
+        </section>
 
     </main>
 

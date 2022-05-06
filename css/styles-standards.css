@@ -703,3 +703,19 @@ figcaption h5:hover{
     transform: scale(1.1);
     transition:0.4s;
 }
+
+#plansite {
+    font-weight: bold;
+    list-style: none;
+}
+#plansite li {
+    margin: 0.5rem;
+}
+#plansite a{
+    transition: 0.3s;
+    color: #ffffff;
+}
+#plansite a:hover{
+    transition: 0.3s;
+    color: #00ff37;
+}

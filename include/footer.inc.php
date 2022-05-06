@@ -12,14 +12,14 @@
 			<tr>
 				<td class="foot-lines">DAMODARANE Jean-Baptiste &amp; ELUMALAI Sriguru </td>
 				<td><img src="./images/clg.png" height="40" width="150" alt="logo de mon site web"/></td>
-				<td class="foot-lines">Plan du site</td>
-                <td class="foot-lines">Contacter</td>
+				<td class="foot-lines"><a href="plandusite.php">Plan du site</a></td>
+                <td class="foot-lines"><a href="apropos.php">A propos</a></td>
 			</tr>
 			<tr>
 			    <td class="foot-lines"></td>
 				<td class="foot-lines"></td>
                 <td class="foot-lines" style="padding-top:10px;"><a href="recherche.php">Recherche</a></td>
-				<td class="foot-lines"><a href="apropos.php">A propos</a></td>
+				<td class="foot-lines"></td>
 			</tr>
 			<tr>
 				<td class="foot-lines">CY Cergy Paris Université</td>
