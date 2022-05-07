@@ -66,9 +66,9 @@
 
         <h4 style="color: green">Image au hasard</h4>
         <figure>
-            <img src="<?php echo $reper."/".$random_img ?>" class="randomimage">
+            <img src="<?php echo $reper."/".$random_img ?>" class="randomimage" />
             <figcaption></figcaption>
-        <figure>
+        </figure>
 
     </main>
 
