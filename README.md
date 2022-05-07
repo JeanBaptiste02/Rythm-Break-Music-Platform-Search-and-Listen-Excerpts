@@ -12,7 +12,7 @@ Notre projet porte sur la conception d'un site web avec des pages dynamiques en 
 Ce site web se base sur la MUSIC et utilise les APIs de Lastfm et de Deezer.
 
 ### URLs
-
+ - http://rythmbreak.alwaysdata.net/
  - https://damodaranejb.alwaysdata.net/
  - https://elumalai.alwaysdata.net/
 
