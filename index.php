@@ -49,16 +49,19 @@
             if(!empty($_COOKIE['songName']) && !empty($_COOKIE['idSong'])) {
                 $idSon = $_COOKIE['idSong'];
                 $nomSon = $_COOKIE['songName'];
+                $nomSo = urlencode($nomSon);
                 $urlPicture = getTrackPicture($idSon);
                 echo "<h4 style='color: green'>Dernière musique consultée</h4> \n";
                 echo "<figure> \n";
-                echo "<a href='informations.php?songs=$nomSon&amp;id=$idSon'> \n";
+
+                echo "<a href='informations.php?songs=$nomSo&amp;id=$idSon'> \n";
                 echo "<img src='$urlPicture' alt='image de la chanson' width='150' height='150' class='lastMusiq' /> \n";
                 echo "</a> \n";
-                echo "</figure> \n";
                 echo "<figcaption> \n";
                 echo "<h5>".$nomSon."</h5> \n";
                 echo "</figcaption> \n";
+                echo "</figure> \n";
+             
             }
             
             
@@ -66,7 +69,7 @@
 
         <h4 style="color: green">Image au hasard</h4>
         <figure>
-            <img src="<?php echo $reper."/".$random_img ?>" class="randomimage" />
+            <img src="<?php echo $reper."/".$random_img ?>" alt="img au hasard" class="randomimage" />
             <figcaption></figcaption>
         </figure>
 

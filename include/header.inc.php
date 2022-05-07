@@ -78,7 +78,6 @@
                         echo '<img src="./images/lightmode.png" alt="theme" class="litnit"/></a></li>';
                     }
                 ?>
-                </li>
             </ul>  
 		</nav>
     </header>
