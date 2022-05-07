@@ -34,12 +34,12 @@
                 echo "<p class='p2'>Date de sortie : ".$jour.'/'.$mois.'/'.$annee."</p> \n";
                 $artistName = $details["artist"]["name"];
                 $idArtist = $details["artist"]["id"];
-                echo "<p class='p2'>Artiste : <a href='informations.php?artist=$artistName&id=$idArtist'>$artistName</a></p> \n";
+                echo "<p class='p2'>Artiste : <a href='informations.php?artist=$artistName&amp;id=$idArtist'>$artistName</a></p> \n";
                 $albumName = $details["album"]["title"];
                 $idAlbum = $details["album"]["id"];
-                echo "<p class='p2'>de l'album : <a href='informations.php?album=$albumName&id=$idAlbum'>$albumName</a></p> \n";
+                echo "<p class='p2'>de l'album : <a href='informations.php?album=$albumName&amp;id=$idAlbum'>$albumName</a></p> \n";
                 $urlMp3 = $details['preview'];
-                echo "<audio controls> \n";
+                echo "<audio controls='controls'> \n";
                 echo "<source src='$urlMp3' type='audio/mpeg'/> \n"; 
                 echo "</audio> \n";
                 echo "</div> \n \t \t";
@@ -97,7 +97,7 @@
                 echo "<p class='p2'>Date de sortie : ".$jour.'/'.$mois.'/'.$annee."</p> \n";
                 $artistName = $details["artist"]["name"];
                 $idArtist = $details["artist"]["id"];
-                echo "<p class='p2'>Artiste : <a href='informations.php?artist=$artistName&id=$idArtist'>$artistName</a></p> \n";
+                echo "<p class='p2'>Artiste : <a href='informations.php?artist=$artistName&amp;id=$idArtist'>$artistName</a></p> \n";
                 echo "</div> \n \t \t";
                 echo "</div> \n \t";
                 echo "</div> \n";
@@ -113,10 +113,10 @@
                         $trackName2 = urlencode($trackName); 
                         $urlMp3 = $details['preview'];
                         echo "<figure> \n";
-                        echo "<a href='informations.php?songs=$trackName2&id=$idTrack'> \n";
+                        echo "<a href='informations.php?songs=$trackName2&amp;id=$idTrack'> \n";
                         echo "<img src='$urlPicture' alt='image de la chanson' width='150' height='150' /> \n";
                         echo "</a> \n";
-                        echo "<audio controls style='padding-top:90px;'> \n";
+                        echo "<audio controls='controls' class='paraone'> \n";
                         echo "<source src='$urlMp3' type='audio/mpeg'/> \n"; 
                         echo "</audio> \n";
                         echo "</figure> \n";
@@ -137,7 +137,7 @@
                         $urlPictureAlbum = $row['cover_medium'];
                         $albumName2 = urlencode($albumName); 
                         echo "<figure> \n";
-                        echo "<a href='informations.php?album=$albumName2&id=$idAlb'> \n";
+                        echo "<a href='informations.php?album=$albumName2&amp;id=$idAlb'> \n";
                         echo "<img src='$urlPictureAlbum' alt='image de la chanson' width='150' height='150' /> \n";
                         echo "</a> \n";
                         echo "</figure> \n";
@@ -217,7 +217,7 @@
                         $urlPictureAlbum = $row['cover_medium'];
                         $albumName2 = urlencode($albumName); 
                         echo "<figure> \n";
-                        echo "<a href='informations.php?album=$albumName2&id=$idAlb'> \n";
+                        echo "<a href='informations.php?album=$albumName2&amp;id=$idAlb'> \n";
                         echo "<img src='$urlPictureAlbum' alt='image de la chanson' width='150' height='150' /> \n";
                         echo "</a> \n";
                         echo "</figure> \n";
@@ -239,11 +239,11 @@
                         $urlMp3 = $row['preview'];
                         $songName2 = urlencode($songName); 
                         echo "<figure> \n";
-                        echo "<a href='informations.php?songs=$songName2&id=$idSong'> \n";
+                        echo "<a href='informations.php?songs=$songName2&amp;id=$idSong'> \n";
                         echo "<img src='$urlPictureSong' alt='image de la chanson' width='150' height='150' /> \n";
                         echo "</a> \n";
                         echo "</figure> \n";
-                        echo "<audio controls style='padding-top:90px;'> \n";
+                        echo "<audio controls='controls' class='paraone'> \n";
                         echo "<source src='$urlMp3' type='audio/mpeg'/> \n"; 
                         echo "</audio> \n";
                         echo "<figcaption> \n";
@@ -264,7 +264,7 @@
                         $artistSimName2 = urlencode($artistSimName); 
                         echo "<article>";
                         echo "<figure> \n";
-                        echo "<a href='informations.php?artist=$artistSimName2&id=$idArtistSim'> \n";
+                        echo "<a href='informations.php?artist=$artistSimName2&amp;id=$idArtistSim'> \n";
                         echo "<img src='$urlPictureSim' alt='image de lartiste' width='150' height='150' /> \n";
                         echo "</a> \n";
                         echo "</figure> \n";

@@ -28,11 +28,11 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-        <link rel="shortcut icon" href="./images/logo.png">
+        <link rel="shortcut icon" href="./images/logo.png" />
         <title> <?php echo $titre;?> </title>
         <meta name="author" content="Damodarane Jean-Baptiste" /> 
         <meta name="date" content="2022-03-20" />
-        <meta name="keywords" content="Projet de Développement web" />
+        <meta name="keywords" content="Projet de DÃ©veloppement web" />
         <meta name="description" content="<?php echo $descrip; ?>" /> 
         <meta charset="UTF-8" />
 

@@ -19,11 +19,12 @@
                         $trackName = $row['title']; 
                         $trackName2 = urlencode($trackName); 
                         echo "<figure> \n";
-                        echo "<a href='informations.php?songs=$trackName2&id=$idTrack'> \n";
+                        echo "<a href='informations.php?songs=$trackName2&amp;id=$idTrack'> \n";
                         echo "<img src='$urlPicture' alt='image de la chanson' width='150' height='150' /> \n";
                         echo "</a> \n";
                         echo "</figure> \n";
                         echo "<figcaption> \n";
+                        $trackName = str_replace("&", "&amp;", $trackName);
                         echo "<h4>".$trackName."</h4> \n";
                         echo "</figcaption> \n";
                     }
@@ -43,11 +44,12 @@
                         $urlPictureAlbum = $row['cover_medium'];
                         $albumName2 = urlencode($albumName); 
                         echo "<figure> \n";
-                        echo "<a href='informations.php?album=$albumName2&id=$idAlb'> \n";
+                        echo "<a href='informations.php?album=$albumName2&amp;id=$idAlb'> \n";
                         echo "<img src='$urlPictureAlbum' alt='image de la chanson' width='150' height='150' /> \n";
                         echo "</a> \n";
                         echo "</figure> \n";
                         echo "<figcaption> \n";
+                        $albumName = str_replace("&", "&amp;", $albumName);
                         echo "<h4>".$albumName."</h4> \n";
                         echo "</figcaption> \n";
                     }
@@ -68,11 +70,12 @@
                         $urlPicture = $row['picture_medium']; 
                         echo "<article>";
                         echo "<figure> \n";
-                        echo "<a href='informations.php?artist=$artistName2&id=$idArtist'> \n";
+                        echo "<a href='informations.php?artist=$artistName2&amp;id=$idArtist'> \n";
                         echo "<img src='$urlPicture' alt='image de lartiste' width='150' height='150' class='lastMusiq' /> \n";
                         echo "</a> \n";
                         echo "</figure> \n";
                         echo "<figcaption> \n";
+                        $artistName = str_replace("&", "&amp;", $artistName);
                         echo "<h4>".$artistName."</h4> \n";
                         echo "</figcaption> \n";
                         echo "</article>";

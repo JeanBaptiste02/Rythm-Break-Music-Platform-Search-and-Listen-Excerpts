@@ -50,9 +50,9 @@
                 $idSon = $_COOKIE['idSong'];
                 $nomSon = $_COOKIE['songName'];
                 $urlPicture = getTrackPicture($idSon);
-                echo "<h4 style='color: green'>Dernière musique consulté</h4> \n";
+                echo "<h4 style='color: green'>Dernière musique consultée</h4> \n";
                 echo "<figure> \n";
-                echo "<a href='informations.php?songs=$nomSon&id=$idSon'> \n";
+                echo "<a href='informations.php?songs=$nomSon&amp;id=$idSon'> \n";
                 echo "<img src='$urlPicture' alt='image de la chanson' width='150' height='150' class='lastMusiq' /> \n";
                 echo "</a> \n";
                 echo "</figure> \n";

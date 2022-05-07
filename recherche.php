@@ -36,7 +36,7 @@
                 if(isset($_GET["nom"]) && (isset($_GET["type"])) && (!empty($_GET["nom"])) && $_GET["type"] == "singer"){
                     $nomart = getArtists(urlencode($_GET["nom"]));
                     $rech = urldecode($_GET['nom']);
-                    echo "<h4>Résultats de la recherche '".$rech."'</h4>";
+                    echo "<h4>Résultats de la recherche pour '".$rech."'</h4>";
                     echo "<div class='grid-container'> \n";
                     foreach($nomart['data'] as $row) {
                         $id = $row['id']; 
@@ -45,7 +45,7 @@
                         $urlPicture = $row['picture_medium']; 
                         echo "<div class='grid-item'> \n";
                         echo "<figure> \n";
-                        echo "<a href='informations.php?artist=$artistName2&id=$id'> \n";
+                        echo "<a href='informations.php?artist=$artistName2&amp;id=$id'> \n";
                         echo "<img src='$urlPicture' alt='image de lartiste' width='250' height='250' /> \n";
                         echo "</a> \n";
                         echo "</figure> \n";
@@ -57,7 +57,7 @@
                     echo "</div> \n";
                 }  else if((empty($_GET["nom"]) && (isset($_GET["type"])) && $_GET["type"] == "singer")){
                         $rech = urldecode($_GET['nom']);
-                        echo "<h4>Résultats de la recherche '".$rech."'</h4>";
+                        echo "<h4>Résultats de la recherche pour '".$rech."'</h4>";
                         echo "<p style='color:white; padding-right: 1%;'>Aucun résultat trouvé</p> \n";  
                 }
               
@@ -65,7 +65,7 @@
                 if(isset($_GET["nom"]) && (isset($_GET["type"])) && (!empty($_GET["nom"])) && $_GET["type"] == "album"){
                     $nomAlb = getAlbums(urlencode($_GET["nom"]));
                     $rech = urldecode($_GET['nom']);
-                    echo "<h4>Résultats de la recherche '".$rech."'</h4>";
+                    echo "<h4>Résultats de la recherche pour '".$rech."'</h4>";
                     echo "<div class='grid-container'> \n";
                     foreach ($nomAlb['data'] as $row) {
                         $id = $row['id']; 
@@ -74,7 +74,7 @@
                         $urlPicture = $row['cover_medium']; 
                         echo "<div class='grid-item'> \n";
                         echo "<figure> \n";
-                        echo "<a href='informations.php?album=$albumName2&id=$id'> \n";
+                        echo "<a href='informations.php?album=$albumName2&amp;id=$id'> \n";
                         echo "<img src='$urlPicture' alt='image de lalbum' width='250' height='250' /> \n";
                         echo "</a> \n";
                         echo "</figure> \n";
@@ -87,14 +87,14 @@
                     
                 } else if(empty($_GET["nom"]) && (isset($_GET["type"])) && $_GET["type"] == "album"){
                     $rech = urldecode($_GET['nom']);
-                    echo "<h4>Résultats de la recherche '".$rech."'</h4>";
+                    echo "<h4>Résultats de la recherche pour '".$rech."'</h4>";
                     echo "<p style='color:white; padding-right: 1%;'>Aucun résultat trouvé</p> \n";  
                 }
 
                 if(isset($_GET["nom"]) && (isset($_GET["type"])) && (!empty($_GET["nom"])) && $_GET["type"] == "song"){
                     $nomSon = getTracks(urlencode($_GET["nom"]));
                     $rech = urldecode($_GET['nom']);
-                    echo "<h4>Résultats de la recherche '".$rech."'</h4>";
+                    echo "<h4>Résultats de la recherche pour '".$rech."'</h4>";
                     echo "<div class='grid-container'> \n";
                     foreach($nomSon['data'] as $row) {
                         $id = $row['id']; 
@@ -103,7 +103,7 @@
                         $urlPicture = $row['album']['cover_medium']; 
                         echo "<div class='grid-item'> \n";
                         echo "<figure> \n";
-                        echo "<a href='informations.php?songs=$songName2&id=$id'> \n";
+                        echo "<a href='informations.php?songs=$songName2&amp;id=$id'> \n";
                         echo "<img src='$urlPicture' alt='image de lalbum' width='250' height='250' /> \n";
                         echo "</a> \n";
                         echo "</figure> \n";
@@ -115,7 +115,7 @@
                     echo "</div> \n";
                 } else if(empty($_GET["nom"]) && (isset($_GET["type"])) && $_GET["type"] == "song"){
                     $rech = urldecode($_GET['nom']);
-                    echo "<h4>Résultats de la recherche '".$rech."'</h4>";
+                    echo "<h4>Résultats de la recherche pour '".$rech."'</h4>";
                     echo "<p style='color:white; padding-right: 1%;'>Aucun résultat trouvé</p> \n";  
                 }
             ?>
